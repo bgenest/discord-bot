@@ -1,0 +1,55 @@
+# bot.py
+import os
+
+import discord
+from dotenv import load_dotenv
+from random import randint
+
+load_dotenv()
+TOKEN = NzM3ODI5NDM5NTg0NDY5MTEz.XyDDNg.K5Hku-Pec72VcsjcoyjmhsJBXZw
+
+client = discord.Client()
+
+def random(x)
+    return randint(0, len(x) - 1)
+
+replys = {}
+with open(replys.txt) as f
+    for line in f
+        (key, val) = line.split(;)
+        replys[key] = val
+
+f = open('roasts.txt', 'r+')
+roasts = [line for line in f.readlines()]
+
+k = open('tendies.txt', 'r+')
+tendies = [line for line in k.readlines()]
+
+@client.event
+async def on_ready()
+    print(f'{client.user} has connected to Discord!')
+
+@client.event
+async def on_message(message)
+    id = client.get_guild(463170484373028865)
+
+# this tells the bot to ignore its own messages
+    if message.author == client.user
+        return
+
+    for key, value in replys.items()
+        if key in message.content
+            await message.channel.send(value)
+
+    if message.content.startswith(!roastsam)
+        await message.channel.send(roasts[random(roasts)])
+
+    if tendies pls in message.content
+        num = randint(0, 10)
+        print(num)
+        if num in range(0, 6)
+            await message.channel.send(fYes, my son, here are your tendies {tendies[random(tendies)]})
+        else
+            await message.channel.send(Not enough good boi points. Mommy said no.)
+
+client.run(TOKEN)
