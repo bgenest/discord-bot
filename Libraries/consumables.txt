@@ -1,0 +1,5 @@
+nick;50
+peter;50
+victor;50
+sam;50
+bryan;50

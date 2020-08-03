@@ -4,7 +4,7 @@ Mackerel
 Haddock
 Bluefin Tuna
 Minnow
-bunch of seaweed
+seaweed
 searobin
 fluke
 Cod
@@ -21,7 +21,7 @@ Haddock
 Mackerel
 monkfish
 Tautog
-bunch of seaweed
+seaweed
 Haddock
 striped bass
 searobin
@@ -37,7 +37,7 @@ Mackerel
 striped bass
 Minnow
 monkfish
-bunch of seaweed
+seaweed
 Scup
 Haddock
 Mackerel
@@ -45,7 +45,7 @@ striped bass
 searobin
 monkfish
 monkfish
-bunch of seaweed
+seaweed
 grouper
 striped bass
 Minnow
@@ -53,3 +53,39 @@ Cod
 fluke
 monkfish
 Haddock
+Haddock
+searobin
+Haddock
+Haddock
+  Bluefin Tuna  
+    Haddock     
+Minnow
+monkfish
+Minnow
+grouper
+CHUM salmoN
+SeaWEED
+Bluefin Tuna
+Minnow
+fluke
+Tautog
+Mackerel
+Salmon
+striped bass
+Scup
+monkfish
+seaweed
+Minnow
+striped bass
+Cod
+Haddock
+Bluefin Tuna
+monkfish
+monkfish
+Scup
+fluke
+Haddock
+Haddock
+Minnow
+searobin
+striped bass

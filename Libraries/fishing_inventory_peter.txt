@@ -5,7 +5,7 @@ red SNAPPER
 Tautog
 Salmon
 Minnow
-bunch of seaweed
+seaweed
 striped bass
 Bluefin Tuna
 fluke
@@ -23,7 +23,7 @@ Mackerel
 monkfish
 Haddock
 Haddock
-bunch of seaweed
+seaweed
 Salmon
 Bluefin Tuna
 grouper
@@ -33,4 +33,26 @@ Salmon
 monkfish
 Tautog
 Bluefin Tuna
+Salmon
+grouper
+Cod
+monkfish
+    searobin    
+Mackerel
+searobin
+grouper
+Haddock
+seaweed
+Haddock
+Minnow
+Tautog
+monkfish
+seaweed
+monkfish
+Tautog
+Minnow
+Mackerel
+Minnow
+Salmon
+Cod
 Salmon

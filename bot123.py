@@ -32,45 +32,47 @@ with open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + "replys.txt") as
 f = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'roasts.txt', 'r+')
 roasts = [line for line in f.readlines()]
 
+z = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'whales.txt', 'r+')
+whales = [line for line in z.readlines()]
+
 k = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'tendies.txt', 'r+')
 tendies = [line for line in k.readlines()]
 
 fish_common = {}
-with open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + "fishing_common - Copy.txt" ) as f:
+with open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + "fishing_common.txt" ) as f:
     for line in f:
         (key, val) = line.split(";")
         fish_common[key] = val
         val.lower()
 
 fish_uncommon = {}
-with open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + "fishing_uncommon - Copy.txt") as f:
+with open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + "fishing_uncommon.txt") as f:
     for line in f:
         (key, val) = line.split(";")
         fish_uncommon[key] = val
         val.lower()
 
 fish_rare = {}
-with open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + "fishing_rare - Copy.txt") as f:
+with open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + "fishing_rare.txt") as f:
     for line in f:
         (key, val) = line.split(";")
         fish_rare[key] = val
         val.lower()
 
 fish_rare2 = {}
-with open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + "fishing_rare2 - Copy.txt") as f:
+with open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + "fishing_rare2.txt") as f:
     for line in f:
         (key, val) = line.split(";")
         fish_rare2[key] = val
         val.lower()
 
-
 @client.event
 async def on_ready():
     print(f'{client.user} is alive!')
 
-
 @client.event
 async def on_message(message):
+   # 
     id = client.get_guild(738564244987052072)
 
 # this tells the bot to ignore its own messages
@@ -89,9 +91,9 @@ async def on_message(message):
     if "cast me" in message.content.lower():
         await message.channel.send("fishing...")
         await message.channel.send("....")
-        tme = randint(1, 1)
+        tme = randint(1, 5)
         time.sleep(tme)
-        fish = randint(1, 900)
+        fish = randint(1, 1000)
         await message.channel.send("Your bobber bobs...")
         if fish in range(1, 750):
             time.sleep(tme)
@@ -131,7 +133,7 @@ async def on_message(message):
                 if cc == "thirddulig#5481":
                     d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_victor.txt', 'a+')
                     d.write(f'{fish_name}\n')
-            if fish in range(701, 740):
+            if fish in range(701, 744):
                 fish_name, fish_pic = random.choice(list(fish_rare.items()))
                 await message.channel.send(f"You caught a {fish_name}! {fish_pic}\nRarity: rare!")
                 if cc == "BryGuy#3945":
@@ -149,7 +151,7 @@ async def on_message(message):
                 if cc == "thirddulig#5481":
                     d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_victor.txt', 'a+')
                     d.write(f'{fish_name}\n')
-            if fish in range(741, 750):
+            if fish in range(745, 750):
                 fish_name, fish_pic = random.choice(list(fish_rare2.items()))
                 await message.channel.send(f"You caught a {fish_name}! {fish_pic}\nRarity: extremely ultra rare!")
                 if cc == "BryGuy#3945":
@@ -167,12 +169,16 @@ async def on_message(message):
                 if cc == "thirddulig#5481":
                     d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_victor.txt', 'a+')
                     d.write(f'{fish_name}\n')
-        else:
+        if fish in range(751,900):
+            fish_name, fish_pic = random.choice(list(fish_rare2.items()))
+            await message.channel.send(f"A {fish_name} bites your hook! but it pulls you into the water..\n Now you're wet, and fishless...\n https://imgur.com/cOZfpMO")
+        if fish in range(901,1000):
             await message.channel.send('alas, the fish got away.')
         return
 
     if message.content.startswith("!inv"):
         await message.channel.send(f"Pulling that up for you...")
+        r = str()
         if cc == "vendrzyk#2835":
             unique_fish = []
             v = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_sam.txt', 'r+')
@@ -191,11 +197,24 @@ async def on_message(message):
             for i in unique_fish:
                 fishing_dict = dict(zip(set_list, unique_fish))
             table = PrettyTable()
-            table.field_names = ["Fish", "Qty"]
+            table.field_names = ["Fish", "Qty", "Rarity"]
             for x, y in fishing_dict.items():
-                table.add_row([x, y])
+                if x in fish_common.keys():
+                    r = "common"
+                    table.add_row([x.title(), y, r.title()])
+            for x, y in fishing_dict.items():
+                if x in fish_uncommon.keys():
+                    r = "uncommon"
+                    table.add_row([x.title(), y, r.title()])
+            for x, y in fishing_dict.items():
+                if x in fish_rare.keys():
+                    r = "rare"
+                    table.add_row([x.title(), y, r.title()])
+            for x, y in fishing_dict.items():
+                if x in fish_rare2.keys():
+                    r = "very rare"
+                    table.add_row([x.title(), y, r.title()])
             await message.channel.send(table)
-
         if cc == "BryGuy#3945":
             unique_fish = []
             v = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_bryan.txt', 'r+')
@@ -214,11 +233,24 @@ async def on_message(message):
             for i in unique_fish:
                 fishing_dict = dict(zip(set_list, unique_fish))
             table = PrettyTable()
-            table.field_names = ["Fish", "Qty"]
+            table.field_names = ["Fish", "Qty", "Rarity"]
             for x, y in fishing_dict.items():
-                table.add_row([x, y])
+                if x in fish_common.keys():
+                    r = "common"
+                    table.add_row([x.title(), y, r.title()])
+            for x, y in fishing_dict.items():
+                if x in fish_uncommon.keys():
+                    r = "uncommon"
+                    table.add_row([x.title(), y, r.title()])
+            for x, y in fishing_dict.items():
+                if x in fish_rare.keys():
+                    r = "rare"
+                    table.add_row([x.title(), y, r.title()])
+            for x, y in fishing_dict.items():
+                if x in fish_rare2.keys():
+                    r = "very rare"
+                    table.add_row([x.title(), y, r.title()])
             await message.channel.send(table)
-
         if cc == "SpeedRt66#4481":
             unique_fish = []
             v = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" +'fishing_inventory_peter.txt', 'r+')
@@ -237,35 +269,24 @@ async def on_message(message):
             for i in unique_fish:
                 fishing_dict = dict(zip(set_list, unique_fish))
             table = PrettyTable()
-            table.field_names = ["Fish", "Qty"]
+            table.field_names = ["Fish", "Qty", "Rarity"]
             for x, y in fishing_dict.items():
-                table.add_row([x, y])
-            await message.channel.send(table)
-            
-
-        if cc == "Nick#4611":
-            unique_fish = []
-            v = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_nick.txt', 'r+')
-            fishing_inventory_nick = [line for line in v.readlines()]
-            fishing_inventory_nick1 = []
-            print(fishing_inventory_nick)
-            for i in fishing_inventory_nick:
-                fishing_inventory_nick1.append(i.strip())
-            set_list = sorted(set(fishing_inventory_nick1))
-            for i in set_list:
-                unique_fish.append(fishing_inventory_nick1.count(i))
-            print(unique_fish)
-            print(set_list)
-            await message.channel.send(f"Nick's inventory:")
-            fishing_dict = {}
-            for i in unique_fish:
-                fishing_dict = dict(zip(set_list, unique_fish))
-            table = PrettyTable()
-            table.field_names = ["Fish", "Qty"]
+                if x in fish_common.keys():
+                    r = "common"
+                    table.add_row([x.title(), y, r.title()])
             for x, y in fishing_dict.items():
-                table.add_row([x, y])
+                if x in fish_uncommon.keys():
+                    r = "uncommon"
+                    table.add_row([x.title(), y, r.title()])
+            for x, y in fishing_dict.items():
+                if x in fish_rare.keys():
+                    r = "rare"
+                    table.add_row([x.title(), y, r.title()])
+            for x, y in fishing_dict.items():
+                if x in fish_rare2.keys():
+                    r = "very rare"
+                    table.add_row([x.title(), y, r.title()])
             await message.channel.send(table)
-
         if cc == "thirddulig#5481":
             unique_fish = []
             v = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_victor.txt', 'r+')
@@ -284,9 +305,59 @@ async def on_message(message):
             for i in unique_fish:
                 fishing_dict = dict(zip(set_list, unique_fish))
             table = PrettyTable()
-            table.field_names = ["Fish", "Qty"]
+            table.field_names = ["Fish", "Qty", "Rarity"]
             for x, y in fishing_dict.items():
-                table.add_row([x, y])
+                if x in fish_common.keys():
+                    r = "common"
+                    table.add_row([x.title(), y, r.title()])
+            for x, y in fishing_dict.items():
+                if x in fish_uncommon.keys():
+                    r = "uncommon"
+                    table.add_row([x.title(), y, r.title()])
+            for x, y in fishing_dict.items():
+                if x in fish_rare.keys():
+                    r = "rare"
+                    table.add_row([x.title(), y, r.title()])
+            for x, y in fishing_dict.items():
+                if x in fish_rare2.keys():
+                    r = "very rare"
+                    table.add_row([x.title(), y, r.title()])
+            await message.channel.send(table)
+        if cc == "Nick#4611":
+            unique_fish = []
+            v = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_nick.txt', 'r+')
+            fishing_inventory_nick = [line for line in v.readlines()]
+            fishing_inventory_nick1 = []
+            print(fishing_inventory_nick)
+            for i in fishing_inventory_nick:
+                fishing_inventory_nick1.append(i.strip())
+            set_list = sorted(set(fishing_inventory_nick1))
+            for i in set_list:
+                unique_fish.append(fishing_inventory_nick1.count(i))
+            print(unique_fish)
+            print(set_list)
+            await message.channel.send(f"Nick's inventory:")
+            fishing_dict = {}
+            for i in unique_fish:
+                fishing_dict = dict(zip(set_list, unique_fish))
+            table = PrettyTable()
+            table.field_names = ["Fish", "Qty", "Rarity"]
+            for x, y in fishing_dict.items():
+                if x in fish_common.keys():
+                    r = "common"
+                    table.add_row([x.title(), y, r.title()])
+            for x, y in fishing_dict.items():
+                if x in fish_uncommon.keys():
+                    r = "uncommon"
+                    table.add_row([x.title(), y, r.title()])
+            for x, y in fishing_dict.items():
+                if x in fish_rare.keys():
+                    r = "rare"
+                    table.add_row([x.title(), y, r.title()])
+            for x, y in fishing_dict.items():
+                if x in fish_rare2.keys():
+                    r = "very rare"
+                    table.add_row([x.title(), y, r.title()])
             await message.channel.send(table)
 
 
@@ -300,6 +371,9 @@ async def on_message(message):
     if message.content.startswith("!roastsam"):
         await message.channel.send(roasts[randomx(roasts)])
         await message.delete()
+
+    if "whale watching" in message.content.lower():
+        await message.channel.send(whales[randomx(whales)]) 
 
     if "tendies pls" in message.content.lower():
         num = randint(0, 10)
@@ -328,5 +402,6 @@ async def on_message(message):
         await message.channel.send("I'm going offline. Peace out dood. \n https://imgur.com/8ooVGWv ")
         await message.delete()
         exit(69)
+
 
 client.run(TOKEN)
