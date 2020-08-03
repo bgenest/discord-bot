@@ -1,6 +1,7 @@
 import time
 import datetime
 import discord
+from discord.ext import commands
 from prettytable import PrettyTable
 from dotenv import load_dotenv
 from random import randint
@@ -22,46 +23,45 @@ def random_dict_key(x):
 
 
 replys = {}
-with open("replys.txt") as f:
+with open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + "replys.txt") as f:
     for line in f:
         (key, val) = line.split(";")
         replys[key] = val
         val.lower()
 
-f = open('roasts.txt', 'r+')
+f = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'roasts.txt', 'r+')
 roasts = [line for line in f.readlines()]
 
-k = open('tendies.txt', 'r+')
+k = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'tendies.txt', 'r+')
 tendies = [line for line in k.readlines()]
 
 fish_common = {}
-with open("fishing_common - Copy.txt") as f:
+with open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + "fishing_common - Copy.txt" ) as f:
     for line in f:
         (key, val) = line.split(";")
         fish_common[key] = val
         val.lower()
 
 fish_uncommon = {}
-with open("fishing_uncommon - Copy.txt") as f:
+with open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + "fishing_uncommon - Copy.txt") as f:
     for line in f:
         (key, val) = line.split(";")
         fish_uncommon[key] = val
         val.lower()
 
 fish_rare = {}
-with open("fishing_rare - Copy.txt") as f:
+with open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + "fishing_rare - Copy.txt") as f:
     for line in f:
         (key, val) = line.split(";")
         fish_rare[key] = val
         val.lower()
 
 fish_rare2 = {}
-with open("fishing_rare2 - Copy.txt") as f:
+with open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + "fishing_rare2 - Copy.txt") as f:
     for line in f:
         (key, val) = line.split(";")
         fish_rare2[key] = val
         val.lower()
-
 
 @client.event
 async def on_ready():
@@ -70,6 +70,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+   # 
     id = client.get_guild(463170484373028865)
 
 # this tells the bot to ignore its own messages
@@ -83,7 +84,7 @@ async def on_message(message):
    # if c == "BryGuy#3945":
     #    await message.channel.send("oh hey bry guy")
 
-# currently changing the data type of the fish.txt files from list to dictionary
+# For levels, make commons more rare 
 
     if "cast me" in message.content.lower():
         await message.channel.send("fishing...")
@@ -94,77 +95,77 @@ async def on_message(message):
         await message.channel.send("Your bobber bobs...")
         if fish in range(1, 750):
             time.sleep(tme)
-            if fish in range(1, 400):
+            if fish in range(1, 500):
                 fish_name, fish_pic = random.choice(list(fish_common.items()))
                 await message.channel.send(f"You caught a {fish_name}! {fish_pic}\nRarity: common.")
                 if cc == "BryGuy#3945":
-                    d = open('fishing_inventory_bryan.txt', 'a+')
+                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_bryan.txt', 'a+')
                     d.write(f'{fish_name}\n')
                 if cc == "SpeedRt66#4481":
-                    d = open('fishing_inventory_peter.txt', 'a+')
+                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" +'fishing_inventory_peter.txt', 'a+')
                     d.write(f'{fish_name}\n')
                 if cc == "Nick#4611":
-                    d = open('fishing_inventory_nick.txt', 'a+')
+                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_nick.txt', 'a+')
                     d.write(f'{fish_name}\n')
                 if cc == "vendrzyk#2835":
-                    d = open('fishing_inventory_sam.txt', 'a+')
+                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_sam.txt', 'a+')
                     d.write(f'{fish_name}\n')
                 if cc == "thirddulig#5481":
-                    d = open('fishing_inventory_victor.txt', 'a+')
+                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_victor.txt', 'a+')
                     d.write(f'{fish_name}\n')
-            if fish in range(400, 600):
+            if fish in range(501, 700):
                 fish_name, fish_pic = random.choice(list(fish_uncommon.items()))
                 await message.channel.send(f"You caught a {fish_name}! {fish_pic}\nRarity: uncommon.")
                 if cc == "BryGuy#3945":
-                    d = open('fishing_inventory_bryan.txt', 'a+')
+                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_bryan.txt', 'a+')
                     d.write(f'{fish_name}\n')
                 if cc == "SpeedRt66#4481":
-                    d = open('fishing_inventory_peter.txt', 'a+')
+                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" +'fishing_inventory_peter.txt', 'a+')
                     d.write(f'{fish_name}\n')
                 if cc == "Nick#4611":
-                    d = open('fishing_inventory_nick.txt', 'a+')
+                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_nick.txt', 'a+')
                     d.write(f'{fish_name}\n')
                 if cc == "vendrzyk#2835":
-                    d = open('fishing_inventory_sam.txt', 'a+')
+                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_sam.txt', 'a+')
                     d.write(f'{fish_name}\n')
                 if cc == "thirddulig#5481":
-                    d = open('fishing_inventory_victor.txt', 'a+')
+                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_victor.txt', 'a+')
                     d.write(f'{fish_name}\n')
-            if fish in range(601, 724):
+            if fish in range(701, 740):
                 fish_name, fish_pic = random.choice(list(fish_rare.items()))
                 await message.channel.send(f"You caught a {fish_name}! {fish_pic}\nRarity: rare!")
                 if cc == "BryGuy#3945":
-                    d = open('fishing_inventory_bryan.txt', 'a+')
+                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_bryan.txt', 'a+')
                     d.write(f'{fish_name}\n')
                 if cc == "SpeedRt66#4481":
-                    d = open('fishing_inventory_peter.txt', 'a+')
+                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" +'fishing_inventory_peter.txt', 'a+')
                     d.write(f'{fish_name}\n')
                 if cc == "Nick#4611":
-                    d = open('fishing_inventory_nick.txt', 'a+')
+                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_nick.txt', 'a+')
                     d.write(f'{fish_name}\n')
                 if cc == "vendrzyk#2835":
-                    d = open('fishing_inventory_sam.txt', 'a+')
+                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_sam.txt', 'a+')
                     d.write(f'{fish_name}\n')
                 if cc == "thirddulig#5481":
-                    d = open('fishing_inventory_victor.txt', 'a+')
+                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_victor.txt', 'a+')
                     d.write(f'{fish_name}\n')
-            if fish in range(725, 750):
+            if fish in range(741, 750):
                 fish_name, fish_pic = random.choice(list(fish_rare2.items()))
                 await message.channel.send(f"You caught a {fish_name}! {fish_pic}\nRarity: extremely ultra rare!")
                 if cc == "BryGuy#3945":
-                    d = open('fishing_inventory_bryan.txt', 'a+')
+                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_bryan.txt', 'a+')
                     d.write(f'{fish_name}\n')
                 if cc == "SpeedRt66#4481":
-                    d = open('fishing_inventory_peter.txt', 'a+')
+                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" +'fishing_inventory_peter.txt', 'a+')
                     d.write(f'{fish_name}\n')
                 if cc == "Nick#4611":
-                    d = open('fishing_inventory_nick.txt', 'a+')
+                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_nick.txt', 'a+')
                     d.write(f'{fish_name}\n')
                 if cc == "vendrzyk#2835":
-                    d = open('fishing_inventory_sam.txt', 'a+')
+                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_sam.txt', 'a+')
                     d.write(f'{fish_name}\n')
                 if cc == "thirddulig#5481":
-                    d = open('fishing_inventory_victor.txt', 'a+')
+                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_victor.txt', 'a+')
                     d.write(f'{fish_name}\n')
         else:
             await message.channel.send('alas, the fish got away.')
@@ -174,7 +175,7 @@ async def on_message(message):
         await message.channel.send(f"Pulling that up for you...")
         if cc == "vendrzyk#2835":
             unique_fish = []
-            v = open('fishing_inventory_sam.txt', 'r+')
+            v = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_sam.txt', 'r+')
             fishing_inventory_sam = [line for line in v.readlines()]
             fishing_inventory_sam1 = []
             print(fishing_inventory_sam)
@@ -194,10 +195,9 @@ async def on_message(message):
             for x, y in fishing_dict.items():
                 table.add_row([x, y])
             await message.channel.send(table)
-
         if cc == "BryGuy#3945":
             unique_fish = []
-            v = open('fishing_inventory_bryan.txt', 'r+')
+            v = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_bryan.txt', 'r+')
             fishing_inventory_bryan = [line for line in v.readlines()]
             fishing_inventory_bryan1 = []
             print(fishing_inventory_bryan)
@@ -217,10 +217,9 @@ async def on_message(message):
             for x, y in fishing_dict.items():
                 table.add_row([x, y])
             await message.channel.send(table)
-
         if cc == "SpeedRt66#4481":
             unique_fish = []
-            v = open('fishing_inventory_peter.txt', 'r+')
+            v = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" +'fishing_inventory_peter.txt', 'r+')
             fishing_inventory_peter = [line for line in v.readlines()]
             fishing_inventory_peter1 = []
             print(fishing_inventory_peter)
@@ -235,12 +234,14 @@ async def on_message(message):
             fishing_dict = {}
             for i in unique_fish:
                 fishing_dict = dict(zip(set_list, unique_fish))
+            table = PrettyTable()
+            table.field_names = ["Fish", "Qty"]
             for x, y in fishing_dict.items():
-                await message.channel.send(f"{x}: {y}")
-
+                table.add_row([x, y])
+            await message.channel.send(table)
         if cc == "Nick#4611":
             unique_fish = []
-            v = open('fishing_inventory_nick.txt', 'r+')
+            v = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_nick.txt', 'r+')
             fishing_inventory_nick = [line for line in v.readlines()]
             fishing_inventory_nick1 = []
             print(fishing_inventory_nick)
@@ -263,7 +264,7 @@ async def on_message(message):
 
         if cc == "thirddulig#5481":
             unique_fish = []
-            v = open('fishing_inventory_victor.txt', 'r+')
+            v = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_victor.txt', 'r+')
             fishing_inventory_victor = [line for line in v.readlines()]
             fishing_inventory_victor1 = []
             print(fishing_inventory_victor)
@@ -284,12 +285,9 @@ async def on_message(message):
                 table.add_row([x, y])
             await message.channel.send(table)
 
-
-
-
     for key, value in replys.items():
         if key in message.content.lower():
-            time.sleep(1)
+
             await message.channel.send(value)
 
     if message.content.startswith("!roastsam"):
@@ -323,8 +321,5 @@ async def on_message(message):
         await message.channel.send("I'm going offline. Peace out dood. \n https://imgur.com/8ooVGWv ")
         await message.delete()
         exit(69)
-
-
-
 
 client.run(TOKEN)
