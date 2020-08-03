@@ -185,8 +185,8 @@ async def on_message(message):
                 unique_fish.append(fishing_inventory_sam1.count(i))
             print(unique_fish)
             print(set_list)
-            await message.channel.send(f"Bryan's inventory:")
-            await message.channel.send(f"Please wait for all values to be displayed before replying...")
+            await message.channel.send(f"Sam's inventory:")
+            fishing_dict = {}
             for i in unique_fish:
                 fishing_dict = dict(zip(set_list, unique_fish))
             table = PrettyTable()
@@ -209,7 +209,7 @@ async def on_message(message):
             print(unique_fish)
             print(set_list)
             await message.channel.send(f"Bryan's inventory:")
-            await message.channel.send(f"Please wait for all values to be displayed before replying...")
+            fishing_dict = {}
             for i in unique_fish:
                 fishing_dict = dict(zip(set_list, unique_fish))
             table = PrettyTable()
@@ -232,7 +232,6 @@ async def on_message(message):
             print(unique_fish)
             print(set_list)
             await message.channel.send(f"Peter's inventory:")
-            await message.channel.send(f"Please wait for all values to be displayed before replying...")
             fishing_dict = {}
             for i in unique_fish:
                 fishing_dict = dict(zip(set_list, unique_fish))
@@ -253,7 +252,7 @@ async def on_message(message):
             print(unique_fish)
             print(set_list)
             await message.channel.send(f"Nick's inventory:")
-            await message.channel.send(f"Please wait for all values to be displayed before replying...")
+            fishing_dict = {}
             for i in unique_fish:
                 fishing_dict = dict(zip(set_list, unique_fish))
             table = PrettyTable()
@@ -276,7 +275,7 @@ async def on_message(message):
             print(unique_fish)
             print(set_list)
             await message.channel.send(f"Victor's inventory:")
-            await message.channel.send(f"Please wait for all values to be displayed before replying...")
+            fishing_dict = {}
             for i in unique_fish:
                 fishing_dict = dict(zip(set_list, unique_fish))
             table = PrettyTable()
