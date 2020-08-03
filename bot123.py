@@ -1,10 +1,13 @@
-# bot.py
-import os
 import time
 import datetime
 import discord
+import PrettyTable
 from dotenv import load_dotenv
 from random import randint
+import random
+
+
+
 
 load_dotenv()
 TOKEN = "NzM4NTY1MjIwMTE2NDYzNjQ3.XyNwdg.mHSRfmYICMOYhd-MCy1x_RZGeu4"
@@ -12,15 +15,13 @@ TOKEN = "NzM4NTY1MjIwMTE2NDYzNjQ3.XyNwdg.mHSRfmYICMOYhd-MCy1x_RZGeu4"
 client = discord.Client()
 
 
-def random(x):
+def randomx(x):
     return randint(0, len(x) - 1)
 
 
-def randomd(x):
-    for line in x:
-
-
-        return
+def random_dict_key(x):
+    random = randint(0, len(x) - 1)
+    return x[random]
 
 
 replys = {}
@@ -36,17 +37,33 @@ roasts = [line for line in f.readlines()]
 k = open('tendies.txt', 'r+')
 tendies = [line for line in k.readlines()]
 
-s = open('fishing_common - Copy.txt', 'r+')
-fish_common = [line for line in s.readlines()]
+fish_common = {}
+with open("fishing_common - Copy.txt") as f:
+    for line in f:
+        (key, val) = line.split(";")
+        fish_common[key] = val
+        val.lower()
 
-a = open('fishing_uncommon - Copy.txt', 'r+')
-fish_uncommon = [line for line in a.readlines()]
+fish_uncommon = {}
+with open("fishing_uncommon - Copy.txt") as f:
+    for line in f:
+        (key, val) = line.split(";")
+        fish_uncommon[key] = val
+        val.lower()
 
-b = open('fishing_rare - Copy.txt.txt', 'r+')
-fish_rare = [line for line in b.readlines()]
+fish_rare = {}
+with open("fishing_rare - Copy.txt") as f:
+    for line in f:
+        (key, val) = line.split(";")
+        fish_rare[key] = val
+        val.lower()
 
-c = open('fishing_rare2 - Copy.txt.txt', 'r+')
-fish_rare2 = [line for line in c.readlines()]
+fish_rare2 = {}
+with open("fishing_rare2 - Copy.txt") as f:
+    for line in f:
+        (key, val) = line.split(";")
+        fish_rare2[key] = val
+        val.lower()
 
 
 @client.event
@@ -80,41 +97,203 @@ async def on_message(message):
         await message.channel.send("Your bobber bobs...")
         if fish in range(1, 750):
             time.sleep(tme)
-            if fish in range(1, 400):
-                z = fish_common[random(fish_common)]
-                await message.channel.send(f"You caught a {z}\nRarity: common.")
+            if fish in range(1, 500):
+                fish_name, fish_pic = random.choice(list(fish_common.items()))
+                await message.channel.send(f"You caught a {fish_name}! {fish_pic}\nRarity: common.")
                 if cc == "BryGuy#3945":
                     d = open('fishing_inventory_bryan.txt', 'a+')
-                    d.write(z)
-            if fish in range(400, 600):
-                z = fish_uncommon[random(fish_uncommon)]
-                await message.channel.send(f"You caught a {z}\nRarity: uncommon.")
-            if fish in range(601, 724):
-                z = fish_rare[random(fish_rare)]
-                await message.channel.send(f"You caught a {z}\nRarity: rare!")
+                    d.write(f'{fish_name}\n')
+                elif cc == "SpeedRt66#4481":
+                    d = open('fishing_inventory_pete.txt', 'a+')
+                    d.write(f'{fish_name}\n')
+                elif cc == "Nick#4611":
+                    d = open('fishing_inventory_nick.txt', 'a+')
+                    d.write(f'{fish_name}\n')
+                elif cc == "vendrzyk#2835":
+                    d = open('fishing_inventory_sam.txt', 'a+')
+                    d.write(f'{fish_name}\n')
+                elif cc == "thirddulig#5481":
+                    d = open('fishing_inventory_victor.txt', 'a+')
+                    d.write(f'{fish_name}\n')
+            if fish in range(500, 650):
+                fish_name, fish_pic = random.choice(list(fish_uncommon.items()))
+                await message.channel.send(f"You caught a {fish_name}! {fish_pic}\nRarity: uncommon.")
+                if cc == "BryGuy#3945":
+                    d = open('fishing_inventory_bryan.txt', 'a+')
+                    d.write(f'{fish_name}\n')
+                elif cc == "SpeedRt66#4481":
+                    d = open('fishing_inventory_pete.txt', 'a+')
+                    d.write(f'{fish_name}\n')
+                elif cc == "Nick#4611":
+                    d = open('fishing_inventory_nick.txt', 'a+')
+                    d.write(f'{fish_name}\n')
+                elif cc == "vendrzyk#2835":
+                    d = open('fishing_inventory_sam.txt', 'a+')
+                    d.write(f'{fish_name}\n')
+                elif cc == "thirddulig#5481":
+                    d = open('fishing_inventory_victor.txt', 'a+')
+                    d.write(f'{fish_name}\n')
+            if fish in range(650, 724):
+                fish_name, fish_pic = random.choice(list(fish_rare.items()))
+                await message.channel.send(f"You caught a {fish_name}! {fish_pic}\nRarity: rare!")
+                if cc == "BryGuy#3945":
+                    d = open('fishing_inventory_bryan.txt', 'a+')
+                    d.write(f'{fish_name}\n')
+                elif cc == "SpeedRt66#4481":
+                    d = open('fishing_inventory_pete.txt', 'a+')
+                    d.write(f'{fish_name}\n')
+                elif cc == "Nick#4611":
+                    d = open('fishing_inventory_nick.txt', 'a+')
+                    d.write(f'{fish_name}\n')
+                elif cc == "vendrzyk#2835":
+                    d = open('fishing_inventory_sam.txt', 'a+')
+                    d.write(f'{fish_name}\n')
+                elif cc == "thirddulig#5481":
+                    d = open('fishing_inventory_victor.txt', 'a+')
+                    d.write(f'{fish_name}\n')
             if fish in range(725, 750):
-                z = fish_rare2[random(fish_rare2)]
-                await message.channel.send(f"You caught a {z}\nRarity: extremely ultra rare!")
+                fish_name, fish_pic = random.choice(list(fish_rare2.items()))
+                await message.channel.send(f"You caught a {fish_name}! {fish_pic}\nRarity: extremely ultra rare!")
+                if cc == "BryGuy#3945":
+                    d = open('fishing_inventory_bryan.txt', 'a+')
+                    d.write(f'{fish_name}\n')
+                elif cc == "SpeedRt66#4481":
+                    d = open('fishing_inventory_pete.txt', 'a+')
+                    d.write(f'{fish_name}\n')
+                elif cc == "Nick#4611":
+                    d = open('fishing_inventory_nick.txt', 'a+')
+                    d.write(f'{fish_name}\n')
+                elif cc == "vendrzyk#2835":
+                    d = open('fishing_inventory_sam.txt', 'a+')
+                    d.write(f'{fish_name}\n')
+                elif cc == "thirddulig#5481":
+                    d = open('fishing_inventory_victor.txt', 'a+')
+                    d.write(f'{fish_name}\n')
         else:
             await message.channel.send('alas, the fish got away.')
         return
 
+    if message.content.startswith("!inv"):
+        await message.delete()
+        await message.channel.send(f"Pulling that up for you...")
+        if cc == "vendrzyk#2835":
+            unique_fish = []
+            v = open('fishing_inventory_bryan.txt', 'r+')
+            fishing_inventory_sam = [line for line in v.readlines()]
+            fishing_inventory_sam1 = []
+            print(fishing_inventory_sam)
+            for i in fishing_inventory_sam:
+                fishing_inventory_sam1.append(i.strip())
+            set_list = sorted(set(fishing_inventory_sam1))
+            for i in set_list:
+                unique_fish.append(fishing_inventory_sam1.count(i))
+            print(unique_fish)
+            print(set_list)
+            await message.channel.send(f"Sam's inventory:")
+            await message.channel.send(f"Please wait for all values to be displayed before replying...")
+            for i in unique_fish:
+                fishing_dict = dict(zip(set_list, unique_fish))
+            for x, y in fishing_dict.items():
+                await message.channel.send(f"{x}: {y}")
+        if cc == "BryGuy#3945":
+            unique_fish = []
+            v = open('fishing_inventory_bryan.txt', 'r+')
+            fishing_inventory_bryan = [line for line in v.readlines()]
+            fishing_inventory_bryan1 = []
+            print(fishing_inventory_bryan)
+            for i in fishing_inventory_bryan:
+                fishing_inventory_bryan1.append(i.strip())
+            set_list = sorted(set(fishing_inventory_bryan1))
+            for i in set_list:
+                unique_fish.append(fishing_inventory_bryan1.count(i))
+            print(unique_fish)
+            print(set_list)
+            await message.channel.send(f"Bryan's inventory:")
+            await message.channel.send(f"Please wait for all values to be displayed before replying...")
+            for i in unique_fish:
+                fishing_dict = dict(zip(set_list, unique_fish))
+            table = PrettyTable()
+
+
+            for x, y in fishing_dict.items():
+
+                await message.channel.send(f"{x}: {y}")
+        if cc == "SpeedRt66#4481":
+            v = open('fishing_inventory_peter.txt.txt', 'r+')
+            fishing_inventory_peter = [line for line in v.readlines()]
+            fishing_inventory_peter1 = []
+            print(fishing_inventory_peter)
+            for i in fishing_inventory_peter:
+                fishing_inventory_peter1.append(i.strip())
+            set_list = sorted(set(fishing_inventory_peter1))
+            for i in set_list:
+                unique_fish.append(fishing_inventory_peter1.count(i))
+            print(unique_fish)
+            print(set_list)
+            await message.channel.send(f"Peter's inventory:")
+            await message.channel.send(f"Please wait for all values to be displayed before replying...")
+            for i in unique_fish:
+                fishing_dict = dict(zip(set_list, unique_fish))
+            for x, y in fishing_dict.items():
+                await message.channel.send(f"{x}: {y}")
+        if cc == "Nick#4611":
+            v = open('fishing_inventory_nick.txt.txt', 'r+')
+            fishing_inventory_nick = [line for line in v.readlines()]
+            fishing_inventory_nick1 = []
+            print(fishing_inventory_nick)
+            for i in fishing_inventory_nick:
+                fishing_inventory_nick1.append(i.strip())
+            set_list = sorted(set(fishing_inventory_nick1))
+            for i in set_list:
+                unique_fish.append(fishing_inventory_nick1.count(i))
+            print(unique_fish)
+            print(set_list)
+            await message.channel.send(f"Nick's inventory:")
+            await message.channel.send(f"Please wait for all values to be displayed before replying...")
+            for i in unique_fish:
+                fishing_dict = dict(zip(set_list, unique_fish))
+            for x, y in fishing_dict.items():
+                printed_values = []
+                printed_values.append(x,y)
+                await message.channel.send(f"{x}: {y}")
+        if cc == "thirddulig#5481":
+            v = open('fishing_inventory_victor.txt.txt', 'r+')
+            fishing_inventory_victor = [line for line in v.readlines()]
+            fishing_inventory_victor1 = []
+            print(fishing_inventory_victor)
+            for i in fishing_inventory_victor:
+                fishing_inventory_victor1.append(i.strip())
+            set_list = sorted(set(fishing_inventory_victor1))
+            for i in set_list:
+                unique_fish.append(fishing_inventory_victor1.count(i))
+            print(unique_fish)
+            print(set_list)
+            await message.channel.send(f"Victor's inventory:")
+            await message.channel.send(f"Please wait for all values to be displayed before replying...")
+            for i in unique_fish:
+                fishing_dict = dict(zip(set_list, unique_fish))
+            for x, y in fishing_dict.items():
+                await message.channel.send(f"{x}: {y}")
+
+
+
+
     for key, value in replys.items():
         if key in message.content.lower():
+            time.sleep(1)
             await message.channel.send(value)
 
     if message.content.startswith("!roastsam"):
-        await message.channel.send(roasts[random(roasts)])
+        await message.channel.send(roasts[randomx(roasts)])
         await message.delete()
 
     if "tendies pls" in message.content.lower():
         num = randint(0, 10)
         print(num)
         if num in range(0, 6):
-            await message.channel.send(f"Yes, my son, here are your tendies {tendies[random(tendies)]}")
+            await message.channel.send(f"Yes, my son, here are your tendies {tendies[randomx(tendies)]}")
         else:
             await message.channel.send("Not enough good boi points. Mommy said no.")
-
     if "rip nick" in message.content.lower():
         await message.channel.send(f"Rip Nick Orr,\n Time of Death: {datetime.datetime.now()}")
     if "rip sam" in message.content.lower():
