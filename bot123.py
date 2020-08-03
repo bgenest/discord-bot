@@ -170,6 +170,9 @@ async def on_message(message):
             await message.channel.send('alas, the fish got away.')
         return
 
+# matplotlib for output?
+
+
     if message.content.startswith("!inv"):
         await message.channel.send(f"Pulling that up for you...")
         if cc == "vendrzyk#2835":
