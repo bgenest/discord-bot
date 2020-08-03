@@ -1,13 +1,10 @@
 import time
 import datetime
 import discord
-import PrettyTable
+from prettytable import PrettyTable
 from dotenv import load_dotenv
 from random import randint
 import random
-
-
-
 
 load_dotenv()
 TOKEN = "NzM4NTY1MjIwMTE2NDYzNjQ3.XyNwdg.mHSRfmYICMOYhd-MCy1x_RZGeu4"
@@ -97,58 +94,58 @@ async def on_message(message):
         await message.channel.send("Your bobber bobs...")
         if fish in range(1, 750):
             time.sleep(tme)
-            if fish in range(1, 500):
+            if fish in range(1, 400):
                 fish_name, fish_pic = random.choice(list(fish_common.items()))
                 await message.channel.send(f"You caught a {fish_name}! {fish_pic}\nRarity: common.")
                 if cc == "BryGuy#3945":
                     d = open('fishing_inventory_bryan.txt', 'a+')
                     d.write(f'{fish_name}\n')
-                elif cc == "SpeedRt66#4481":
-                    d = open('fishing_inventory_pete.txt', 'a+')
+                if cc == "SpeedRt66#4481":
+                    d = open('fishing_inventory_peter.txt', 'a+')
                     d.write(f'{fish_name}\n')
-                elif cc == "Nick#4611":
+                if cc == "Nick#4611":
                     d = open('fishing_inventory_nick.txt', 'a+')
                     d.write(f'{fish_name}\n')
-                elif cc == "vendrzyk#2835":
+                if cc == "vendrzyk#2835":
                     d = open('fishing_inventory_sam.txt', 'a+')
                     d.write(f'{fish_name}\n')
-                elif cc == "thirddulig#5481":
+                if cc == "thirddulig#5481":
                     d = open('fishing_inventory_victor.txt', 'a+')
                     d.write(f'{fish_name}\n')
-            if fish in range(500, 650):
+            if fish in range(400, 600):
                 fish_name, fish_pic = random.choice(list(fish_uncommon.items()))
                 await message.channel.send(f"You caught a {fish_name}! {fish_pic}\nRarity: uncommon.")
                 if cc == "BryGuy#3945":
                     d = open('fishing_inventory_bryan.txt', 'a+')
                     d.write(f'{fish_name}\n')
-                elif cc == "SpeedRt66#4481":
-                    d = open('fishing_inventory_pete.txt', 'a+')
+                if cc == "SpeedRt66#4481":
+                    d = open('fishing_inventory_peter.txt', 'a+')
                     d.write(f'{fish_name}\n')
-                elif cc == "Nick#4611":
+                if cc == "Nick#4611":
                     d = open('fishing_inventory_nick.txt', 'a+')
                     d.write(f'{fish_name}\n')
-                elif cc == "vendrzyk#2835":
+                if cc == "vendrzyk#2835":
                     d = open('fishing_inventory_sam.txt', 'a+')
                     d.write(f'{fish_name}\n')
-                elif cc == "thirddulig#5481":
+                if cc == "thirddulig#5481":
                     d = open('fishing_inventory_victor.txt', 'a+')
                     d.write(f'{fish_name}\n')
-            if fish in range(650, 724):
+            if fish in range(601, 724):
                 fish_name, fish_pic = random.choice(list(fish_rare.items()))
                 await message.channel.send(f"You caught a {fish_name}! {fish_pic}\nRarity: rare!")
                 if cc == "BryGuy#3945":
                     d = open('fishing_inventory_bryan.txt', 'a+')
                     d.write(f'{fish_name}\n')
-                elif cc == "SpeedRt66#4481":
-                    d = open('fishing_inventory_pete.txt', 'a+')
+                if cc == "SpeedRt66#4481":
+                    d = open('fishing_inventory_peter.txt', 'a+')
                     d.write(f'{fish_name}\n')
-                elif cc == "Nick#4611":
+                if cc == "Nick#4611":
                     d = open('fishing_inventory_nick.txt', 'a+')
                     d.write(f'{fish_name}\n')
-                elif cc == "vendrzyk#2835":
+                if cc == "vendrzyk#2835":
                     d = open('fishing_inventory_sam.txt', 'a+')
                     d.write(f'{fish_name}\n')
-                elif cc == "thirddulig#5481":
+                if cc == "thirddulig#5481":
                     d = open('fishing_inventory_victor.txt', 'a+')
                     d.write(f'{fish_name}\n')
             if fish in range(725, 750):
@@ -157,16 +154,16 @@ async def on_message(message):
                 if cc == "BryGuy#3945":
                     d = open('fishing_inventory_bryan.txt', 'a+')
                     d.write(f'{fish_name}\n')
-                elif cc == "SpeedRt66#4481":
-                    d = open('fishing_inventory_pete.txt', 'a+')
+                if cc == "SpeedRt66#4481":
+                    d = open('fishing_inventory_peter.txt', 'a+')
                     d.write(f'{fish_name}\n')
-                elif cc == "Nick#4611":
+                if cc == "Nick#4611":
                     d = open('fishing_inventory_nick.txt', 'a+')
                     d.write(f'{fish_name}\n')
-                elif cc == "vendrzyk#2835":
+                if cc == "vendrzyk#2835":
                     d = open('fishing_inventory_sam.txt', 'a+')
                     d.write(f'{fish_name}\n')
-                elif cc == "thirddulig#5481":
+                if cc == "thirddulig#5481":
                     d = open('fishing_inventory_victor.txt', 'a+')
                     d.write(f'{fish_name}\n')
         else:
@@ -174,11 +171,10 @@ async def on_message(message):
         return
 
     if message.content.startswith("!inv"):
-        await message.delete()
         await message.channel.send(f"Pulling that up for you...")
         if cc == "vendrzyk#2835":
             unique_fish = []
-            v = open('fishing_inventory_bryan.txt', 'r+')
+            v = open('fishing_inventory_sam.txt', 'r+')
             fishing_inventory_sam = [line for line in v.readlines()]
             fishing_inventory_sam1 = []
             print(fishing_inventory_sam)
@@ -190,11 +186,15 @@ async def on_message(message):
             print(unique_fish)
             print(set_list)
             await message.channel.send(f"Sam's inventory:")
-            await message.channel.send(f"Please wait for all values to be displayed before replying...")
+            fishing_dict = {}
             for i in unique_fish:
                 fishing_dict = dict(zip(set_list, unique_fish))
+            table = PrettyTable()
+            table.field_names = ["Fish", "Qty"]
             for x, y in fishing_dict.items():
-                await message.channel.send(f"{x}: {y}")
+                table.add_row([x, y])
+            await message.channel.send(table)
+
         if cc == "BryGuy#3945":
             unique_fish = []
             v = open('fishing_inventory_bryan.txt', 'r+')
@@ -209,17 +209,18 @@ async def on_message(message):
             print(unique_fish)
             print(set_list)
             await message.channel.send(f"Bryan's inventory:")
-            await message.channel.send(f"Please wait for all values to be displayed before replying...")
+            fishing_dict = {}
             for i in unique_fish:
                 fishing_dict = dict(zip(set_list, unique_fish))
             table = PrettyTable()
-
-
+            table.field_names = ["Fish", "Qty"]
             for x, y in fishing_dict.items():
+                table.add_row([x, y])
+            await message.channel.send(table)
 
-                await message.channel.send(f"{x}: {y}")
         if cc == "SpeedRt66#4481":
-            v = open('fishing_inventory_peter.txt.txt', 'r+')
+            unique_fish = []
+            v = open('fishing_inventory_peter.txt', 'r+')
             fishing_inventory_peter = [line for line in v.readlines()]
             fishing_inventory_peter1 = []
             print(fishing_inventory_peter)
@@ -231,13 +232,15 @@ async def on_message(message):
             print(unique_fish)
             print(set_list)
             await message.channel.send(f"Peter's inventory:")
-            await message.channel.send(f"Please wait for all values to be displayed before replying...")
+            fishing_dict = {}
             for i in unique_fish:
                 fishing_dict = dict(zip(set_list, unique_fish))
             for x, y in fishing_dict.items():
                 await message.channel.send(f"{x}: {y}")
+
         if cc == "Nick#4611":
-            v = open('fishing_inventory_nick.txt.txt', 'r+')
+            unique_fish = []
+            v = open('fishing_inventory_nick.txt', 'r+')
             fishing_inventory_nick = [line for line in v.readlines()]
             fishing_inventory_nick1 = []
             print(fishing_inventory_nick)
@@ -249,15 +252,18 @@ async def on_message(message):
             print(unique_fish)
             print(set_list)
             await message.channel.send(f"Nick's inventory:")
-            await message.channel.send(f"Please wait for all values to be displayed before replying...")
+            fishing_dict = {}
             for i in unique_fish:
                 fishing_dict = dict(zip(set_list, unique_fish))
+            table = PrettyTable()
+            table.field_names = ["Fish", "Qty"]
             for x, y in fishing_dict.items():
-                printed_values = []
-                printed_values.append(x,y)
-                await message.channel.send(f"{x}: {y}")
+                table.add_row([x, y])
+            await message.channel.send(table)
+
         if cc == "thirddulig#5481":
-            v = open('fishing_inventory_victor.txt.txt', 'r+')
+            unique_fish = []
+            v = open('fishing_inventory_victor.txt', 'r+')
             fishing_inventory_victor = [line for line in v.readlines()]
             fishing_inventory_victor1 = []
             print(fishing_inventory_victor)
@@ -269,11 +275,14 @@ async def on_message(message):
             print(unique_fish)
             print(set_list)
             await message.channel.send(f"Victor's inventory:")
-            await message.channel.send(f"Please wait for all values to be displayed before replying...")
+            fishing_dict = {}
             for i in unique_fish:
                 fishing_dict = dict(zip(set_list, unique_fish))
+            table = PrettyTable()
+            table.field_names = ["Fish", "Qty"]
             for x, y in fishing_dict.items():
-                await message.channel.send(f"{x}: {y}")
+                table.add_row([x, y])
+            await message.channel.send(table)
 
 
 
