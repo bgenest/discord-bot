@@ -56,3 +56,6 @@ Minnow
 Salmon
 Cod
 Salmon
+Bluefin Tuna
+Minnow
+fluke

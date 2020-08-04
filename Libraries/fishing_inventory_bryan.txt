@@ -89,3 +89,21 @@ Haddock
 Minnow
 searobin
 striped bass
+searobin
+grouper
+Mackerel
+seaweed
+Scup
+searobin
+grouper
+searobin
+Minnow
+fluke
+Minnow
+seaweed
+Tautog
+Scup
+seaweed
+seaweed
+seaweed
+Haddock

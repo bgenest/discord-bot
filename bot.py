@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 from random import randint
 import random
 
+# https://stackoverflow.com/questions/2349991/how-to-import-other-python-files
 load_dotenv()
 TOKEN = "NzM3ODI5NDM5NTg0NDY5MTEz.XyDDNg.K5Hku-Pec72VcsjcoyjmhsJBXZw"
 
@@ -72,7 +73,6 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-   # 
     id = client.get_guild(463170484373028865)
 
 # this tells the bot to ignore its own messages
@@ -93,7 +93,8 @@ async def on_message(message):
         await message.channel.send("....")
         tme = randint(1, 5)
         time.sleep(tme)
-        fish = randint(1, 1000)
+        fish = randint(1, 750)
+        print(fish)
         await message.channel.send("Your bobber bobs...")
         if fish in range(1, 750):
             time.sleep(tme)
@@ -169,11 +170,11 @@ async def on_message(message):
                 if cc == "thirddulig#5481":
                     d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_victor.txt', 'a+')
                     d.write(f'{fish_name}\n')
-        if fish in range(751,760):
-            fish_name, fish_pic = random.choice(list(fish_rare2.items()))
-            await message.channel.send(f"A {fish_name} bites your hook! but it pulls you into the water..\n Now you're wet, and fishless...\n https://imgur.com/cOZfpMO")
-        if fish in range(761,1000):
-            await message.channel.send('alas, the fish got away.')
+            if fish in range(751,760):
+                fish_name, fish_pic = random.choice(list(fish_rare2.items()))
+                await message.channel.send(f"A {fish_name} bites your hook! but it pulls you into the water..\n Now you're wet, and fishless...\n https://imgur.com/cOZfpMO")
+            if fish in range(761,1000):
+                await message.channel.send('you attempt to reel it in, but the fish gets away.')
         return
 
     if message.content.startswith("!inv"):
@@ -384,15 +385,21 @@ async def on_message(message):
         else:
             await message.channel.send("Not enough good boi points. Mommy said no.")
     if "rip nick" in message.content.lower():
-        await message.channel.send(f"Rip Nick Orr,\n Time of Death: {datetime.datetime.now()}")
+        x = str(datetime.datetime.now())
+        x[:-7]
+        await message.channel.send(f"Rip Nick Orr,\n Time of Death: {x[:-7]}")
     if "rip sam" in message.content.lower():
-        await message.channel.send(f"Rip Sam Gordon, \n Time of Death: {datetime.datetime.now()}")
+        x = str(datetime.datetime.now())
+        await message.channel.send(f"Rip Sam Gordon, \n Time of Death: {x[:-7]}")
     if 'rip victor' in message.content.lower():
-        await message.channel.send(f"Rip Victor Dulig,\n Time of Death: {datetime.datetime.now()}")
+        x = str(datetime.datetime.now())
+        await message.channel.send(f"Rip Victor Dulig,\n Time of Death: {x[:-7]}")
     if 'rip pete' in message.content.lower():
-        await message.channel.send(f"Rip Peter Sands,\n Time of Death: {datetime.datetime.now()}")
+        x = str(datetime.datetime.now())
+        await message.channel.send(f"Rip Peter Sands,\n Time of Death: {x[:-7]}")
     if 'rip bryan' in message.content.lower():
-        await message.channel.send(f"Rip Bryan Genest,\n Time of Death: {datetime.datetime.now()}")
+        x = str(datetime.datetime.now())
+        await message.channel.send(f"Rip Bryan Genest,\n Time of Death: {x[:-7]}")
     if 'rip bot' in message.content.lower():
         await message.channel.send(f"I am not dead, I am eternal.")
 
