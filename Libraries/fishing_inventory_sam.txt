@@ -12,3 +12,4 @@ Minnow
 seaweed
 Tautog
 Haddock
+tilefish

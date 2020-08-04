@@ -96,7 +96,7 @@ async def on_message(message):
         fish = randint(1, 750)
         print(fish)
         await message.channel.send("Your bobber bobs...")
-        if fish in range(1, 750):
+        if fish in range(1, 1000):
             time.sleep(tme)
             if fish in range(1, 500):
                 fish_name, fish_pic = random.choice(list(fish_common.items()))

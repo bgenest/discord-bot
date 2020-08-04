@@ -6,6 +6,7 @@ from prettytable import PrettyTable
 from dotenv import load_dotenv
 from random import randint
 import random
+from threading import Thread
 
 load_dotenv()
 TOKEN = "NzM4NTY1MjIwMTE2NDYzNjQ3.XyNwdg.mHSRfmYICMOYhd-MCy1x_RZGeu4"
@@ -13,7 +14,7 @@ TOKEN = "NzM4NTY1MjIwMTE2NDYzNjQ3.XyNwdg.mHSRfmYICMOYhd-MCy1x_RZGeu4"
 client = discord.Client()
 
 bot = discord.Client()
-
+bryan_time = 0
 def randomx(x):
     return randint(0, len(x) - 1)
 
@@ -72,7 +73,6 @@ async def on_ready():
     print(f'{client.user} is alive!')
 
 
-
 @client.event
 async def on_message(message):
    # 
@@ -91,110 +91,100 @@ async def on_message(message):
 
 # For levels, make commons more rare 
 
-    if "cast me" in message.content.lower():
-        await message.channel.send("fishing...")
-        await message.channel.send("....")
-        tme = randint(1, 1)
-        time.sleep(tme)
-        fish = randint(1, 1000)
-        await message.channel.send("Your bobber bobs...")
-        '''if fish in range(1, 750):
+    if cc == "BryGuy#3945":
+        while bryan_time != 0:
+            if bryan == 25:
+                bryan_time -= 1
+                time.sleep(1)
+            
+        return
+    else:
+        if "cast me" in message.content.lower():
+            await message.channel.send("fishing...")
+            await message.channel.send("....")
+            tme = randint(1, 1)
             time.sleep(tme)
-            if fish in range(1, 500):
-                fish_name, fish_pic = random.choice(list(fish_common.items()))
-                await message.channel.send(f"You caught a {fish_name}! {fish_pic}\nRarity: common.")
-                if cc == "BryGuy#3945":
-                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_bryan.txt', 'a+')
-                    d.write(f'{fish_name}\n')
-                if cc == "SpeedRt66#4481":
-                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" +'fishing_inventory_peter.txt', 'a+')
-                    d.write(f'{fish_name}\n')
-                if cc == "Nick#4611":
-                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_nick.txt', 'a+')
-                    d.write(f'{fish_name}\n')
-                if cc == "vendrzyk#2835":
-                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_sam.txt', 'a+')
-                    d.write(f'{fish_name}\n')
-                if cc == "thirddulig#5481":
-                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_victor.txt', 'a+')
-                    d.write(f'{fish_name}\n')
-            if fish in range(501, 700):
-                fish_name, fish_pic = random.choice(list(fish_uncommon.items()))
-                await message.channel.send(f"You caught a {fish_name}! {fish_pic}\nRarity: uncommon.")
-                if cc == "BryGuy#3945":
-                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_bryan.txt', 'a+')
-                    d.write(f'{fish_name}\n')
-                if cc == "SpeedRt66#4481":
-                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" +'fishing_inventory_peter.txt', 'a+')
-                    d.write(f'{fish_name}\n')
-                if cc == "Nick#4611":
-                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_nick.txt', 'a+')
-                    d.write(f'{fish_name}\n')
-                if cc == "vendrzyk#2835":
-                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_sam.txt', 'a+')
-                    d.write(f'{fish_name}\n')
-                if cc == "thirddulig#5481":
-                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_victor.txt', 'a+')
-                    d.write(f'{fish_name}\n')
-            if fish in range(701, 744):
-                fish_name, fish_pic = random.choice(list(fish_rare.items()))
-                await message.channel.send(f"You caught a {fish_name}! {fish_pic}\nRarity: rare!")
-                if cc == "BryGuy#3945":
-                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_bryan.txt', 'a+')
-                    d.write(f'{fish_name}\n')
-                if cc == "SpeedRt66#4481":
-                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" +'fishing_inventory_peter.txt', 'a+')
-                    d.write(f'{fish_name}\n')
-                if cc == "Nick#4611":
-                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_nick.txt', 'a+')
-                    d.write(f'{fish_name}\n')
-                if cc == "vendrzyk#2835":
-                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_sam.txt', 'a+')
-                    d.write(f'{fish_name}\n')
-                if cc == "thirddulig#5481":
-                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_victor.txt', 'a+')
-                    d.write(f'{fish_name}\n')
-            if fish in range(745, 750):
-                fish_name, fish_pic = random.choice(list(fish_rare2.items()))
-                await message.channel.send(f"You caught a {fish_name}! {fish_pic}\nRarity: extremely ultra rare!")
-                if cc == "BryGuy#3945":
-                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_bryan.txt', 'a+')
-                    d.write(f'{fish_name}\n')
-                if cc == "SpeedRt66#4481":
-                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" +'fishing_inventory_peter.txt', 'a+')
-                    d.write(f'{fish_name}\n')
-                if cc == "Nick#4611":
-                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_nick.txt', 'a+')
-                    d.write(f'{fish_name}\n')
-                if cc == "vendrzyk#2835":
-                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_sam.txt', 'a+')
-                    d.write(f'{fish_name}\n')
-                if cc == "thirddulig#5481":
-                    d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_victor.txt', 'a+')
-                    d.write(f'{fish_name}\n')
-        if fish in range(751,900):
-            fish_name, fish_pic = random.choice(list(fish_rare2.items()))
-            await message.channel.send(f"A {fish_name} bites your hook! but it pulls you into the water..\n Now you're wet, and fishless...\n https://imgur.com/cOZfpMO")'''
-        if fish in range(0,1000):
-            await message.channel.send('Oh no! a seagull came by and took some of your fish!')
+            fish = randint(1, 1000)
+            await message.channel.send("Your bobber bobs...")
+            if fish in range(1, 750):
+                time.sleep(tme)
+                if fish in range(1, 500):
+                    fish_name, fish_pic = random.choice(list(fish_common.items()))
+                    await message.channel.send(f"You caught a {fish_name}! {fish_pic}\nRarity: common.")
+                    if cc == "BryGuy#3945":
+                        d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_bryan.txt', 'a+')
+                        d.write(f'{fish_name}\n')
+                    if cc == "SpeedRt66#4481":
+                        d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" +'fishing_inventory_peter.txt', 'a+')
+                        d.write(f'{fish_name}\n')
+                    if cc == "Nick#4611":
+                        d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_nick.txt', 'a+')
+                        d.write(f'{fish_name}\n')
+                    if cc == "vendrzyk#2835":
+                        d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_sam.txt', 'a+')
+                        d.write(f'{fish_name}\n')
+                    if cc == "thirddulig#5481":
+                        d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_victor.txt', 'a+')
+                        d.write(f'{fish_name}\n')
+                if fish in range(501, 700):
+                    fish_name, fish_pic = random.choice(list(fish_uncommon.items()))
+                    await message.channel.send(f"You caught a {fish_name}! {fish_pic}\nRarity: uncommon.")
+                    if cc == "BryGuy#3945":
+                        d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_bryan.txt', 'a+')
+                        d.write(f'{fish_name}\n')
+                    if cc == "SpeedRt66#4481":
+                        d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" +'fishing_inventory_peter.txt', 'a+')
+                        d.write(f'{fish_name}\n')
+                    if cc == "Nick#4611":
+                        d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_nick.txt', 'a+')
+                        d.write(f'{fish_name}\n')
+                    if cc == "vendrzyk#2835":
+                        d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_sam.txt', 'a+')
+                        d.write(f'{fish_name}\n')
+                    if cc == "thirddulig#5481":
+                        d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_victor.txt', 'a+')
+                        d.write(f'{fish_name}\n')
+                if fish in range(701, 744):
+                    fish_name, fish_pic = random.choice(list(fish_rare.items()))
+                    await message.channel.send(f"You caught a {fish_name}! {fish_pic}\nRarity: rare!")
+                    if cc == "BryGuy#3945":
+                        d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_bryan.txt', 'a+')
+                        d.write(f'{fish_name}\n')
+                    if cc == "SpeedRt66#4481":
+                        d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" +'fishing_inventory_peter.txt', 'a+')
+                        d.write(f'{fish_name}\n')
+                    if cc == "Nick#4611":
+                        d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_nick.txt', 'a+')
+                        d.write(f'{fish_name}\n')
+                    if cc == "vendrzyk#2835":
+                        d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_sam.txt', 'a+')
+                        d.write(f'{fish_name}\n')
+                    if cc == "thirddulig#5481":
+                        d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_victor.txt', 'a+')
+                        d.write(f'{fish_name}\n')
+                if fish in range(745, 750):
+                    fish_name, fish_pic = random.choice(list(fish_rare2.items()))
+                    await message.channel.send(f"You caught a {fish_name}! {fish_pic}\nRarity: extremely ultra rare!")
+                    if cc == "BryGuy#3945":
+                        d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_bryan.txt', 'a+')
+                        d.write(f'{fish_name}\n')
+                    if cc == "SpeedRt66#4481":
+                        d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" +'fishing_inventory_peter.txt', 'a+')
+                        d.write(f'{fish_name}\n')
+                    if cc == "Nick#4611":
+                        d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_nick.txt', 'a+')
+                        d.write(f'{fish_name}\n')
+                    if cc == "vendrzyk#2835":
+                        d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_sam.txt', 'a+')
+                        d.write(f'{fish_name}\n')
+                    if cc == "thirddulig#5481":
+                        d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_victor.txt', 'a+')
+                        d.write(f'{fish_name}\n')
+                    if fish in range(751,900):
+                        fish_name, fish_pic = random.choice(list(fish_rare2.items()))
+                        await message.channel.send(f"A {fish_name} bites your hook! but it pulls you into the water..\n Now you're wet, and fishless...\n https://imgur.com/cOZfpMO")
             if cc == "BryGuy#3945":
-                d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_bryan.txt', 'a+')
-                lines = d.readlines()
-                x = randint(0,10)
-                del lines[x]
-                d.delete(f'{fish_name}\n')
-            if cc == "SpeedRt66#4481":
-                d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_peter.txt', 'a+')
-                d.write(f'{fish_name}\n')
-            if cc == "Nick#4611":
-                d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_nick.txt', 'a+')
-                d.write(f'{fish_name}\n')
-            if cc == "vendrzyk#2835":
-                d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_sam.txt', 'a+')
-                d.write(f'{fish_name}\n')
-            if cc == "thirddulig#5481":
-                d = open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + 'fishing_inventory_victor.txt', 'a+')
-                d.write(f'{fish_name}\n')
+                bryan_time = 10
 
     if message.content.startswith("!inv"):
         await message.channel.send(f"Pulling that up for you...")

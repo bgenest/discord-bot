@@ -59,3 +59,49 @@ Salmon
 Bluefin Tuna
 Minnow
 fluke
+Haddock
+grouper
+grouper
+Haddock
+Haddock
+seaweed
+Bluefin Tuna
+Bluefin Tuna
+redfish
+seaweed
+tilefish
+halibut
+island Grouper
+Haddock
+Bluefin Tuna
+herring
+Scup
+sturgeon
+grouper
+Tautog
+seaweed
+herring
+swordfish
+redfish
+cusk fish
+herring
+sturgeon
+cusk fish
+bocaccio
+monkfish
+halibut
+searobin
+searobin
+searobin
+monkfish
+tilefish
+tilefish
+grouper
+Scup
+monkfish
+Haddock
+searobin
+monkfish
+Haddock
+Scup
+grouper

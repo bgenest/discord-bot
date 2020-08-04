@@ -107,3 +107,37 @@ seaweed
 seaweed
 seaweed
 Haddock
+seaweed
+Salmon
+fluke
+seaweed
+searobin
+grouper
+redfish
+Haddock
+Tautog
+grouper
+monkfish
+Minnow
+Bluefin Tuna
+Haddock
+cusk fish
+grouper
+Salmon
+wahoo
+grouper
+Minnow
+redfish
+cusk fish
+coelacanth
+grouper
+searobin
+seaweed
+grouper
+herring
+wahoo
+Bluefin Tuna
+cusk fish
+marlin
+tilefish
+pollock

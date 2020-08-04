@@ -15,3 +15,5 @@ searobin
 Scup
 Mackerel
 Scup
+monkfish
+Minnow
