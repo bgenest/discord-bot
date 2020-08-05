@@ -29,7 +29,7 @@ print(MyClass())
 p1 = MyClass()
 
 print(p1.x)
-
+'''
 class Person:
   def __init__(self, name, age):
     self.name = name
@@ -39,3 +39,20 @@ p1 = Person("John", 36)
 
 print(p1.name)
 print(p1.age)
+'''
+
+
+
+
+class User:
+  def __init__(self, first_name, inventory):
+    self.first_name = first_name
+    self.inventory = inventory
+
+peter = User("peter", 36)
+nick = User("nick")
+
+print(user.first_name)
+print(user.inventory)
+
+

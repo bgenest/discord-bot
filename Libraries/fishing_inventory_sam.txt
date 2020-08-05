@@ -13,3 +13,18 @@ seaweed
 Tautog
 Haddock
 tilefish
+herring
+Haddock
+seaweed
+herring
+Haddock
+grouper
+fluke
+tilefish
+Minnow
+island Grouper
+monkfish
+cusk fish
+Mackerel
+pollock
+seaweed

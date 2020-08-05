@@ -141,3 +141,63 @@ cusk fish
 marlin
 tilefish
 pollock
+sturgeon
+redfish
+Cod
+halibut
+seaweed
+monkfish
+wahoo
+marlin
+pollock
+skipjack Tuna
+grouper
+pollock
+monkfish
+Minnow
+seaweed
+Cod
+Cod
+searobin
+Tautog
+striped bass
+searobin
+Salmon
+monkfish
+Cod
+halibut
+pollock
+Cod
+herring
+Haddock
+halibut
+herring
+redfish
+halibut
+seaweed
+pollock
+cusk fish
+pufferfish
+Salmon
+Minnow
+Haddock
+island Grouper
+redfish
+lion fish
+Cod
+herring
+trumpetfish
+grouper
+grouper
+pollock
+parrotfish
+tilefish
+parrotfish
+redfish
+barracuda
+lion fish
+trumpetfish
+wahoo
+seaweed
+Mackerel
+monkfish

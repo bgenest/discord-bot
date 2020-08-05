@@ -17,3 +17,36 @@ Mackerel
 Scup
 monkfish
 Minnow
+swordfish
+redfish
+coelacanth
+Cod
+halibut
+Bluefin Tuna
+pollock
+seaweed
+grouper
+pollock
+pollock
+wahoo
+Haddock
+searobin
+grouper
+monkfish
+wahoo
+swordfish
+herring
+seaweed
+grouper
+monkfish
+striped bass
+pollock
+Minnow
+pollock
+flying fish
+seaweed
+pollock
+flying fish
+Salmon
+pollock
+trumpetfish
