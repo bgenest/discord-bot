@@ -80,7 +80,7 @@ with open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + "fishing_rare2.t
 
 @client.event
 async def on_ready():
-    print(f'{client.user} is alive!')
+    print(f'{client.user} is alive! TESTING')
 
 @client.event
 async def on_message(message):

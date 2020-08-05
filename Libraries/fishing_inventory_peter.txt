@@ -190,3 +190,50 @@ parrotfish
 blue crab
 searobin
 lion fish
+monkfish
+monkfish
+pufferfish
+wahoo
+flying fish
+searobin
+island Grouper
+searobin
+blue crab
+wahoo
+Minnow
+searobin
+pollock
+island Grouper
+wahoo
+halibut
+redfish
+wahoo
+marlin
+cusk fish
+monkfish
+herring
+Cod
+herring
+monkfish
+pufferfish
+pufferfish
+Mackerel
+herring
+blue crab
+redfish
+cusk fish
+lion fish
+sturgeon
+cusk fish
+Minnow
+halibut
+Haddock
+flying fish
+seaweed
+Minnow
+striped bass
+tilefish
+coelacanth
+blue crab
+grouper
+Haddock

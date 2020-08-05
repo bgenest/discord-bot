@@ -57,8 +57,8 @@ Haddock
 searobin
 Haddock
 Haddock
-  Bluefin Tuna  
-    Haddock     
+Bluefin Tuna  
+Haddock     
 Minnow
 monkfish
 Minnow
@@ -201,3 +201,22 @@ wahoo
 seaweed
 Mackerel
 monkfish
+blue crab
+barracuda
+marlin
+coelacanth
+blue crab
+Haddock
+pollock
+blue crab
+wahoo
+halibut
+herring
+Minnow
+herring
+blue crab
+marlin
+Salmon
+mahimahi
+Mackerel
+dwarf sawfish
