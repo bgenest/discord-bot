@@ -281,3 +281,26 @@ wahoo
 Haddock
 fluke
 Haddock
+redfish
+herring
+pollock
+pufferfish
+parrotfish
+blue crab
+monkfish
+Salmon
+monkfish
+Haddock
+monkfish
+cusk fish
+parrotfish
+parrotfish
+pollock
+Mackerel
+monkfish
+searobin
+wahoo
+Cod
+herring
+sturgeon
+grouper

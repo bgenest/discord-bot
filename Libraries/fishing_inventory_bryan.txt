@@ -248,3 +248,19 @@ pufferfish
 herring
 seaweed
 herring
+cusk fish
+Haddock
+blue crab
+pollock
+halibut
+Haddock
+pollock
+sturgeon
+redfish
+wahoo
+lion fish
+Haddock
+cusk fish
+herring
+wahoo
+barracuda

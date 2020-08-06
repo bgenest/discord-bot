@@ -79,3 +79,6 @@ pollock
 marlin
 striped bass
 barracuda
+Tautog
+searobin
+Haddock

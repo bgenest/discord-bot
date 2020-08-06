@@ -6,6 +6,7 @@ from prettytable import PrettyTable
 from dotenv import load_dotenv
 from random import randint
 import random
+from rps import rps
 
 # https://stackoverflow.com/questions/2349991/how-to-import-other-python-files
 load_dotenv()
@@ -246,5 +247,14 @@ async def on_message(message):
         await message.delete()
         exit(69)
 
+    if message.content.startswith("!rock"):
+        await message.channel.send("ok time for you to lose:")
+        await message.channel.send(rps("rock"))
+    if message.content.startswith("!paper"):
+        await message.channel.send("ok time for you to lose:")
+        await message.channel.send(rps("paper"))
+    if message.content.startswith("!scissors"):
+        await message.channel.send("ok time for you to lose:")
+        await message.channel.send(rps("scissors"))
 
 client.run(TOKEN)
