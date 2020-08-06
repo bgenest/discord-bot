@@ -30,4 +30,4 @@ def rps(x):
             m = "scissors.\n..we tied LOL" 
     time.sleep(2)       
 
-    return m
+    return 
