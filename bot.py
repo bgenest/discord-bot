@@ -66,21 +66,10 @@ async def on_message(message):
         await message.channel.send(whales[randomx(whales)]) 
 
     if "tendies pls" in message.content.lower():
-        num = randint(0, 10)
-        print(num)
-        if num in range(0, 6):
-            await message.channel.send(f"Yes, my son, here are your tendies {tendies[randomx(tendies)]}")
-        else:
-            await message.channel.send("Not enough good boi points. Mommy said no.")
+        await message.channel.send(tendie_func())
 
     if "rip" in message.content.lower():
-        user_msg = message.content.lower()
-        for x in usernames.values():
-            for y in x.values():
-                name = y
-                if name in user_msg:
-                    x = str(datetime.datetime.now())
-                    await message.channel.send(f"Rip {name.title()},\n Time of Death: {x[:-7]}")
+        await message.channel.send(rip(message.content.lower()))
 
     if "!night" in message.content.lower():
         await message.channel.send("I'm going offline. Peace out dood. \n https://imgur.com/8ooVGWv ")

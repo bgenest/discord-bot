@@ -11,28 +11,28 @@ from usernames import usernames
 
 
 fish_common = {}
-with open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + "fishing_common.txt" ) as f:
+with open("fishing_common.txt" ) as f:
     for line in f:
         (key, val) = line.split(";")
         fish_common[key] = val
         val.lower()
 
 fish_uncommon = {}
-with open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + "fishing_uncommon.txt") as f:
+with open("fishing_uncommon.txt") as f:
     for line in f:
         (key, val) = line.split(";")
         fish_uncommon[key] = val
         val.lower()
 
 fish_rare = {}
-with open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + "fishing_rare.txt") as f:
+with open("fishing_rare.txt") as f:
     for line in f:
         (key, val) = line.split(";")
         fish_rare[key] = val
         val.lower()
 
 fish_rare2 = {}
-with open("C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" + "fishing_rare2.txt") as f:
+with open("fishing_rare2.txt") as f:
     for line in f:
         (key, val) = line.split(";")
         fish_rare2[key] = val
@@ -63,7 +63,7 @@ def fishing_0(cc):
             msg = (f"You caught a {fish_name}! {fish_pic}\nRarity: extremely ultra rare!")
         for x,y in usernames.items():
             if cc == x:
-                d = open(usernames[cc]["file_path"]  + usernames[cc]["file_name"], "a+" )
+                d = open(usernames[cc]["file_name"], "a+" )
                 d.write(f'{fish_name}\n')
         return msg0,msg1,msg2,msg
     if fish in range(760,770):
@@ -83,7 +83,7 @@ def inventory(cc):
             for x, y in usernames.items():
                 if cc == x:
                     unique_fish = []
-                    v = open(usernames[cc]["file_path"]  + usernames[cc]["file_name"], "r+" )
+                    v = open(usernames[cc]["file_name"], "r+" )
                     fishing_inventory = [line for line in v.readlines()]
                     fishing_inventory1 = []
                     print(fishing_inventory)
@@ -115,4 +115,4 @@ def inventory(cc):
                         if x in fish_rare2.keys():
                             r = "very rare"
                             table.add_row([x.title(), y, r.title()])
-        return msg0, msg1, table
+            return msg0, msg1, table

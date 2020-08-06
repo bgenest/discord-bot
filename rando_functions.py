@@ -1,6 +1,8 @@
-
-import time
-
+import datetime
+from random import randint 
+from library import tendies
+from usernames import usernames
+from library import randomx
 
 
 def rip(message):
@@ -14,11 +16,12 @@ def rip(message):
         return msg
         
 
-def tendies(random):
-    num = random
-    print(num)
+def tendie_func():
+    num = randint(0,10)
     if num in range(0, 6):
         msg = (f"Yes, my son, here are your tendies {tendies[randomx(tendies)]}")
     else:
         msg = ("Not enough good boi points.")
     return msg
+
+print(tendie_func())
