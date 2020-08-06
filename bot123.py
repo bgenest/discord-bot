@@ -23,11 +23,11 @@ def random_dict_key(x):
     return x[random]
 
 
-usernames = {"BryGuy#3945" :{"first_name": "bryan" ,"file_path": "C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" , 'file_name': 'fishing_inventory_bryan.txt'},
-            "SpeedRt66#4481":{'first_name':"peter","file_path": "C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" , 'file_name': 'fishing_inventory_peter.txt' },
-            "Nick#4611":{'first_name':"nick","file_path": "C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" , 'file_name': 'fishing_inventory_nick.txt' },
-            "vendrzyk#2835":{'first_name':"sam","file_path": "C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" , 'file_name': 'fishing_inventory_sam.txt' },
-            "thirddulig#5481":{'first_name':"victor","file_path": "C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" , 'file_name': 'fishing_inventory_victor.txt' },
+usernames = {"BryGuy#3945" :{"first_name": "bryan" ,"file_path": "C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" , 'file_name': 'fishing_inventory_bryan.txt',},
+            "SpeedRt66#4481":{'first_name':"peter","file_path": "C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" , 'file_name': 'fishing_inventory_peter.txt', },
+            "Nick#4611":{'first_name':"nick","file_path": "C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" , 'file_name': 'fishing_inventory_nick.txt', },
+            "vendrzyk#2835":{'first_name':"sam","file_path": "C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" , 'file_name': 'fishing_inventory_sam.txt', },
+            "thirddulig#5481":{'first_name':"victor","file_path": "C:/Users/Bgenest96/Desktop/discord-bot/Libraries/" , 'file_name': 'fishing_inventory_victor.txt', },
  }
 
 
@@ -128,6 +128,11 @@ async def on_message(message):
         if fish in range(770,1000):
             await message.channel.send('you attempt to reel it in, but the fish gets away.')
         return
+        if fish in range(1,3):
+            for x, y in usernames.items():
+                if cc == x :
+                    v = usernames[cc]["first_name"]
+                    await message.channel.send(f" A seagull came by and took some of your fish,{v.title()}!")
 
 
     if message.content.startswith("!inv"):

@@ -31,3 +31,7 @@ seaweed
 parrotfish
 Minnow
 monkfish
+lion fish
+pollock
+wahoo
+Scup

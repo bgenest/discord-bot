@@ -237,3 +237,47 @@ coelacanth
 blue crab
 grouper
 Haddock
+cusk fish
+Minnow
+seaweed
+blue crab
+grouper
+searobin
+Haddock
+redfish
+Cod
+pufferfish
+swordfish
+cusk fish
+lion fish
+halibut
+pollock
+pollock
+mahimahi
+trumpetfish
+grouper
+fluke
+redfish
+seaweed
+blue crab
+pufferfish
+clownfish
+redfish
+Scup
+island Grouper
+halibut
+seaweed
+pufferfish
+Cod
+mahimahi
+cusk fish
+Haddock
+lion fish
+barracuda
+seaweed
+Minnow
+Haddock
+wahoo
+Haddock
+fluke
+Haddock
