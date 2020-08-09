@@ -82,3 +82,28 @@ barracuda
 Tautog
 searobin
 Haddock
+pollock
+pollock
+marlin
+herring
+trumpetfish
+pufferfish
+tilefish
+Cod
+redfish
+redfish
+searobin
+seaweed
+pufferfish
+seaweed
+Haddock
+dwarf sawfish
+Haddock
+Mackerel
+parrotfish
+pufferfish
+searobin
+striped bass
+Cod
+island Grouper
+herring

@@ -316,3 +316,71 @@ wahoo
 wahoo
 island Grouper
 marlin
+blue crab
+grouper
+flying fish
+Haddock
+seaweed
+halibut
+wahoo
+monkfish
+Tautog
+monkfish
+Haddock
+cusk fish
+Scup
+parrotfish
+redfish
+monkfish
+pufferfish
+seaweed
+Minnow
+redfish
+Mackerel
+wahoo
+Bluefish
+cusk fish
+blue crab
+herring
+Mackerel
+Cod
+grouper
+herring
+tilefish
+Minnow
+island Grouper
+Scup
+flying fish
+grouper
+monkfish
+barracuda
+Bluefish
+flying fish
+Haddock
+Haddock
+cusk fish
+Salmon
+herring
+Bluefish
+Haddock
+Salmon
+Tautog
+lion fish
+redfish
+dwarf sawfish
+cusk fish
+blue crab
+Scup
+monkfish
+Mackerel
+skipjack Tuna
+Tautog
+seaweed
+herring
+herring
+Bluefish
+seaweed
+blue crab
+cusk fish
+herring
+parrotfish

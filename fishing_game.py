@@ -1,4 +1,3 @@
-
 import random
 import time
 import discord
@@ -8,6 +7,7 @@ from prettytable import PrettyTable
 from dotenv import load_dotenv
 from random import randint
 from usernames import usernames
+from cooldowntimer import cooldowntimer
 
 
 fish_common = {}
@@ -44,6 +44,7 @@ def fishing_0(cc):
     msg0 = ("fishing...")
     msg1 = ("....")
     fish = randint(1, 1000)
+    print(fish)
     for x, y in usernames.items():
         if cc == x :
             v = usernames[cc]["first_name"]
@@ -52,7 +53,7 @@ def fishing_0(cc):
         if fish in range(1, 500):
             fish_name, fish_pic = random.choice(list(fish_common.items()))
             msg = (f"You caught a {fish_name}! {fish_pic}\nRarity: Common.")
-        if fish in range(501, 700):
+        if fish in range(500, 700):
             fish_name, fish_pic = random.choice(list(fish_uncommon.items()))
             msg = (f"You caught a {fish_name}! {fish_pic}\nRarity: uncommon.")
         if fish in range(700, 740):
@@ -66,12 +67,12 @@ def fishing_0(cc):
                 d = open(usernames[cc]["file_name"], "a+" )
                 d.write(f'{fish_name}\n')
         return msg0,msg1,msg2,msg
-    if fish in range(760,770):
+    if fish in range(751,770):
         fish_name, fish_pic = random.choice(list(fish_rare2.items()))
         msg = (f"A {fish_name} bites your hook! but it pulls you into the water..\n Now you're wet, and fishless...\n https://imgur.com/cOZfpMO")
-    if fish in range(770,1000):
+    if fish in range(770,1001):
         msg = ('you attempt to reel it in, but the fish gets away.')
-        return msg0 ,msg1, msg2, msg
+        return msg0,msg1,msg2,msg
 
 def inventory(cc):
         msg0 = (f"Pulling that up for you...")
@@ -115,4 +116,4 @@ def inventory(cc):
                         if x in fish_rare2.keys():
                             r = "very rare"
                             table.add_row([x.title(), y, r.title()])
-            return msg0, msg1, table
+        return msg0,msg1,table

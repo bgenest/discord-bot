@@ -12,3 +12,4 @@ wahoo;https://imgur.com/CDwon82
 pufferfish;https://imgur.com/gallery/WrWm1
 parrotfish;https://imgur.com/a/IzPnn3K
 blue crab;https://imgur.com/gallery/VFUz5wP
+Bluefish;https://imgur.com/a/urVK1eE

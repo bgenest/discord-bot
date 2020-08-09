@@ -2,6 +2,7 @@
 from random import randint
 import datetime
 from usernames import usernames
+from random import randint
 
 def randomx(x):
     return randint(0, len(x) - 1)

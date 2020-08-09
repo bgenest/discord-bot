@@ -13,8 +13,10 @@ def rip(message):
                 if name in user_msg:
                     x = str(datetime.datetime.now())
                     msg = (f"Rip {name.title()},\n Time of Death: {x[:-7]}")
+                else:
+                    return "false"
         return msg
-        
+
 
 def tendie_func():
     num = randint(0,10)
@@ -23,5 +25,3 @@ def tendie_func():
     else:
         msg = ("Not enough good boi points.")
     return msg
-
-print(tendie_func())

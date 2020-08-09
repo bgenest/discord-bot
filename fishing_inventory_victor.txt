@@ -1,3 +1,5 @@
 grouper
 seaweed
-parrotfish
+parrotfishwahoo
+wahoo
+Haddock
