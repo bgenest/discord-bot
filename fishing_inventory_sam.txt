@@ -61,3 +61,37 @@ monkfish
 grouper
 herring
 red SNAPPER
+cusk fish
+Cod
+pollock
+island Grouper
+wahoo
+blue crab
+fluke
+Scup
+redfish
+monkfish
+halibut
+redfish
+pufferfish
+Tautog
+Bluefin Tuna
+Cod
+Tautog
+Bluefish
+halibut
+redfish
+blue crab
+redfish
+herring
+redfish
+pufferfish
+pollock
+pollock
+wahoo
+wahoo
+herring
+barracuda
+trumpetfish
+Cod
+redfish

@@ -385,3 +385,40 @@ redfish
 sturgeon
 herring
 redfish
+Haddock
+blue crab
+halibut
+trumpetfish
+seaweed
+trumpetfish
+Bluefish
+herring
+wahoo
+cusk fish
+cusk fish
+Bluefish
+Bluefish
+Minnow
+Bluefin Tuna
+flying fish
+Mackerel
+grouper
+mahimahi
+halibut
+parrotfish
+grouper
+clownfish
+seaweed
+redfish
+barracuda
+seaweed
+redfish
+pufferfish
+herring
+Scup
+pufferfish
+Minnow
+pollock
+Haddock
+wahoo
+skipjack Tuna

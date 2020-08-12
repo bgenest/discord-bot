@@ -384,3 +384,49 @@ blue crab
 cusk fish
 herring
 parrotfish
+pufferfish
+monkfish
+blue crab
+seaweed
+pollock
+searobin
+monkfish
+Bluefish
+Cod
+Scup
+lion fish
+pufferfish
+Mackerel
+seaweed
+redfish
+herring
+grouper
+searobin
+pollock
+Minnow
+Haddock
+Minnow
+herring
+Mackerel
+lion fish
+redfish
+Minnow
+pufferfish
+wahoo
+herring
+monkfish
+Bluefish
+lion fish
+sturgeon
+monkfish
+wahoo
+herring
+skipjack Tuna
+Cod
+halibut
+wahoo
+Scup
+flying fish
+pollock
+Minnow
+grouper

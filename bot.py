@@ -10,7 +10,7 @@ from rps import rps
 from fishing_game import fishing_0, inventory
 from usernames import usernames
 from library import random_dict_key,randomx,tendies,roasts,whales,replys
-from rando_functions import tendie_func, rip
+from rando_functions import tendie_func, rip, message_counter_add, message_counter_tell
 from cooldowntimer import cooldowntimer, cooldowntimer2
 
 load_dotenv()
@@ -34,9 +34,10 @@ async def on_message(message):
                 # this tells the bot to ignore its own messages  \/ \/
                 if message.author == client.user:
                     return
+                message_counter_add(cc)
             #fishing game - normal speed
                 if "cast me" in message.content.lower():
-                    if cooldowntimer2(cc,10) != 'true':
+                    if cooldowntimer2(cc,15) != 'true':
                         await message.delete()
                         return
                     else:
@@ -79,14 +80,28 @@ async def on_message(message):
                     await message.channel.send(whales[randomx(whales)]) 
             #random tendies
                 if "tendies pls" in message.content.lower():
-                    await message.channel.send(tendie_func())
+                    if cooldowntimer2(cc,10) != 'true':
+                        await message.channel.send("you gotta wait...")
+                    else:
+                        cooldowntimer(cc)
+                        await message.channel.send(tendie_func())
             #rip
                 if "rip" in message.content.lower():
                     await message.channel.send(rip(message.content.lower()))
             #nighty night
-                if "!159753951753" in message.content.lower():
+                if "!byebye9900" in message.content.lower():
                     await message.channel.send("I'm going offline. Peace out dood. \n https://imgur.com/8ooVGWv ")
                     await message.delete()
+                    exit(69)
+                if "!repair" in message.content.lower():
+                    await message.channel.send("I'm going offline for repairs. \n https://imgur.com/8ooVGWv ")
+                    await message.delete()
+                    await close()
+                    exit(69)
+                if "!morefeatures" in message.content.lower():
+                    await message.channel.send("I'm going offline, more features coming. \n https://imgur.com/8ooVGWv ")
+                    await message.delete()
+
                     exit(69)
             #rock paper scissors
 
@@ -114,5 +129,8 @@ async def on_message(message):
                         cooldowntimer(cc)
                     await message.channel.send("ok time for you to lose:")
                     await message.channel.send(rps("scissors"))
+            #message counter
+                if message.content.startswith("!messagecount"):
+                    await message.channel.send(message_counter_tell(cc))
 
 client.run(TOKEN)
