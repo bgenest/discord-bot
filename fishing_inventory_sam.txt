@@ -95,3 +95,6 @@ barracuda
 trumpetfish
 Cod
 redfish
+trumpetfish
+Tautog
+grouper

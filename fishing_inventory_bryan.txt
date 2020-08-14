@@ -422,3 +422,12 @@ pollock
 Haddock
 wahoo
 skipjack Tuna
+pufferfish
+redfish
+Mackerel
+seaweed
+Bluefish
+cusk fish
+blue crab
+monkfish
+seaweed

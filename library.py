@@ -3,6 +3,9 @@ from random import randint
 import datetime
 from usernames import usernames
 from random import randint
+import time
+from alcohol import alcohols
+import random
 
 def randomx(x):
     return randint(0, len(x) - 1)
@@ -29,6 +32,9 @@ whales = [line for line in z.readlines()]
 k = open('tendies.txt', 'r+')
 tendies = [line for line in k.readlines()]
 
+b = open('alcohol.txt', 'r+')
+alcohol = [line for line in b.readlines()]
+
 def rip(message):
         user_msg = message
         for x in usernames.values():
@@ -47,3 +53,10 @@ def tendie_func():
     else:
         msg = ("Not enough good boi points.")
     return msg
+
+
+def get_drink(choice):
+    for x, y in alcohols.items():
+        if x in choice:
+            key, val = random.choice(list(y.items()))
+            return key.title(), val

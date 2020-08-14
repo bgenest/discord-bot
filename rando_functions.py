@@ -6,7 +6,8 @@ from library import randomx
 import random
 import string
 import time
-
+from commands import commands
+from prettytable import PrettyTable
 
 def rip(message):
         user_msg = message
@@ -34,3 +35,12 @@ def message_counter_tell(cc):
 #add 69 and 420 functionality
 def message_counter_add(cc):
     usernames[cc]['messagecount'] += 1
+
+
+def dicttoprettytable(dict):
+    table = PrettyTable()
+    table.field_names = ["Command", "Function"]
+    for x, y in dict.items():
+        table.add_row([x.title(), y])
+
+    return table

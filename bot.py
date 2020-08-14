@@ -9,9 +9,10 @@ from random import randint
 from rps import rps
 from fishing_game import fishing_0, inventory
 from usernames import usernames
-from library import random_dict_key,randomx,tendies,roasts,whales,replys
-from rando_functions import tendie_func, rip, message_counter_add, message_counter_tell
+from library import random_dict_key,randomx,tendies,roasts,whales,replys,get_drink
+from rando_functions import tendie_func, rip, message_counter_add, message_counter_tell, dicttoprettytable
 from cooldowntimer import cooldowntimer, cooldowntimer2
+from commands import commands
 
 load_dotenv()
 TOKEN = "NzM3ODI5NDM5NTg0NDY5MTEz.XyDDNg.K5Hku-Pec72VcsjcoyjmhsJBXZw"
@@ -78,6 +79,13 @@ async def on_message(message):
             #whale stuff
                 if "whale watching" in message.content.lower():
                     await message.channel.send(whales[randomx(whales)]) 
+            #alcohol
+                if "gimme a drink, " in message.content.lower():
+                    await message.channel.send("Here you go sir:")
+                    list = get_drink(message.content.lower())
+                    await message.channel.send(list[0])
+                    await message.channel.send(list[1])
+
             #random tendies
                 if "tendies pls" in message.content.lower():
                     if cooldowntimer2(cc,10) != 'true':
@@ -96,15 +104,12 @@ async def on_message(message):
                 if "!repair" in message.content.lower():
                     await message.channel.send("I'm going offline for repairs. \n https://imgur.com/8ooVGWv ")
                     await message.delete()
-                    await close()
                     exit(69)
                 if "!morefeatures" in message.content.lower():
                     await message.channel.send("I'm going offline, more features coming. \n https://imgur.com/8ooVGWv ")
                     await message.delete()
-
                     exit(69)
             #rock paper scissors
-
                 if message.content.startswith("!rock"):
                     if cooldowntimer2(cc,3) != 'true':
                         await message.delete()
@@ -132,5 +137,9 @@ async def on_message(message):
             #message counter
                 if message.content.startswith("!messagecount"):
                     await message.channel.send(message_counter_tell(cc))
+            #help function
+                if message.content.startswith("!!help"):
+                    await message.channel.send("Here's a list of the current available commands:")
+                    await message.channel.send(dicttoprettytable(commands))
 
 client.run(TOKEN)
