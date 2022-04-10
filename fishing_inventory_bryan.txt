@@ -431,3 +431,5 @@ cusk fish
 blue crab
 monkfish
 seaweed
+grouper
+Salmon
