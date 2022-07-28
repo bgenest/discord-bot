@@ -1,4 +1,3 @@
-#bot.py
 import time
 import datetime
 import discord
@@ -14,20 +13,7 @@ from rando_functions import tendie_func, rip, message_counter_add, message_count
 from cooldowntimer import cooldowntimer, cooldowntimer2
 from commands import commands
 
-load_dotenv()
-TOKEN = "NzM3ODI5NDM5NTg0NDY5MTEz.XyDDNg.K5Hku-Pec72VcsjcoyjmhsJBXZw"
-
-client = discord.Client()
-
-
-@client.event
-async def on_ready():
-    print(f'{client.user} is alive!')
-
-
-@client.event
-async def on_message(message):  # sourcery skip: avoid-builtin-shadow
-    id = client.get_guild(463170484373028865)
+id = client.get_guild(463170484373028865)
     cc = str(message.author)
 
     for x,y in usernames.items():
@@ -85,6 +71,7 @@ async def on_message(message):  # sourcery skip: avoid-builtin-shadow
                     list = get_drink(message.content.lower())
                     await message.channel.send(list[0])
                     await message.channel.send(list[1])
+
             #random tendies
                 if "tendies pls" in message.content.lower():
                     if cooldowntimer2(cc,10) != 'true':
@@ -140,5 +127,3 @@ async def on_message(message):  # sourcery skip: avoid-builtin-shadow
                 if message.content.startswith("!!help"):
                     await message.channel.send("Here's a list of the current available commands:")
                     await message.channel.send(dicttoprettytable(commands))
-
-client.run(TOKEN)
