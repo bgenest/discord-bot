@@ -431,3 +431,7 @@ cusk fish
 blue crab
 monkfish
 seaweed
+cusk fish
+skipjack Tuna
+Haddock
+seaweed
