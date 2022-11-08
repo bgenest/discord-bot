@@ -1,4 +1,5 @@
-#bot.py
+import os
+from dotenv import load_dotenv
 from cProfile import label
 import time
 import datetime
