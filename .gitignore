@@ -7,3 +7,5 @@
 
 Libraries/
 .env
+.pyc
+games/Libraries/__pycache__/alcohol.cpython-38.pyc
