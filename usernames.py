@@ -1,6 +1,5 @@
 #usernames.py
 
-
 usernames = {
 
             "BryGuy#3945" :{"first_name": "bryan", 'file_name': 'fishing_inventory_bryan.txt','messagecount':0,},

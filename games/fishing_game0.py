@@ -7,7 +7,7 @@ from prettytable import PrettyTable
 from dotenv import load_dotenv
 from random import randint
 from usernames import usernames
-from cooldowntimer import cooldowntimer
+from scripts.cooldowntimer import cooldowntimer
 
 
 fish_common = {}

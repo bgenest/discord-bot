@@ -4,35 +4,33 @@ import datetime
 from usernames import usernames
 from random import randint
 import time
-from alcohol import alcohols
+from games.Libraries.alcohol import alcohols
 import random
 
 def randomx(x):
     return randint(0, len(x) - 1)
 
-
 def random_dict_key(x):
     random = randint(0, len(x) - 1)
     return x[random]
 
-
 replys = {}
-with open("replys.txt") as f:
+with open("games/Libraries/replys.txt") as f:
     for line in f:
         (key, val) = line.split(";")
         replys[key] = val
         val.lower()
 
-f = open('roasts.txt', 'r+')
+f = open('games/Libraries/roasts.txt', 'r+')
 roasts = [line for line in f.readlines()]
 
-z = open('whales.txt', 'r+')
+z = open('games/Libraries/whales.txt', 'r+')
 whales = [line for line in z.readlines()]
 
-k = open('tendies.txt', 'r+')
+k = open('games/Libraries/tendies.txt', 'r+')
 tendies = [line for line in k.readlines()]
 
-b = open('alcohol.txt', 'r+')
+b = open('games/Libraries/alcohol.txt', 'r+')
 alcohol = [line for line in b.readlines()]
 
 def rip(message):
@@ -45,7 +43,6 @@ def rip(message):
                     msg = (f"Rip {name.title()},\n Time of Death: {x[:-7]}")
         return msg
         
-
 def tendie_func():
     num = randint(0,10)
     if num in range(0, 6):
@@ -53,7 +50,6 @@ def tendie_func():
     else:
         msg = ("Not enough good boi points.")
     return msg
-
 
 def get_drink(choice):
     for x, y in alcohols.items():

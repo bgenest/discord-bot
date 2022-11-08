@@ -6,13 +6,13 @@ from discord.ext import commands
 from prettytable import PrettyTable
 from dotenv import load_dotenv
 from random import randint
-from rps import rps
-from fishing_game import fishing_0, inventory
+from games.rps import rps
+from games.fishing_game import fishing_0, inventory
 from usernames import usernames
-from library import random_dict_key,randomx,tendies,roasts,whales,replys,get_drink
-from rando_functions import tendie_func, rip, message_counter_add, message_counter_tell, dicttoprettytable
-from cooldowntimer import cooldowntimer, cooldowntimer2
-from commands import commands
+from scripts.library import random_dict_key,randomx,tendies,roasts,whales,replys,get_drink
+from scripts.rando_functions import tendie_func, rip, message_counter_add, message_counter_tell, dicttoprettytable
+from scripts.cooldowntimer import cooldowntimer, cooldowntimer2
+from scripts.commands import commands
 
 load_dotenv()
 TOKEN = "NzM3ODI5NDM5NTg0NDY5MTEz.XyDDNg.K5Hku-Pec72VcsjcoyjmhsJBXZw"

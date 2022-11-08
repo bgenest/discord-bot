@@ -7,32 +7,31 @@ from prettytable import PrettyTable
 from dotenv import load_dotenv
 from random import randint
 from usernames import usernames
-from cooldowntimer import cooldowntimer
+from scripts.cooldowntimer import cooldowntimer
 
-###refactor these
 fish_common = {}
-with open("fishing_common.txt" ) as f:
+with open("games/Libraries/fishing_common.txt" ) as f:
     for line in f:
         (key, val) = line.split(";")
         fish_common[key] = val
         val.lower()
 
 fish_uncommon = {}
-with open("fishing_uncommon.txt") as f:
+with open("games/Libraries/fishing_uncommon.txt") as f:
     for line in f:
         (key, val) = line.split(";")
         fish_uncommon[key] = val
         val.lower()
 
 fish_rare = {}
-with open("fishing_rare.txt") as f:
+with open("games/Libraries/fishing_rare.txt") as f:
     for line in f:
         (key, val) = line.split(";")
         fish_rare[key] = val
         val.lower()
 
 fish_rare2 = {}
-with open("fishing_rare2.txt") as f:
+with open("games/Libraries/fishing_rare2.txt") as f:
     for line in f:
         (key, val) = line.split(";")
         fish_rare2[key] = val

@@ -1,12 +1,12 @@
 import datetime
 from random import randint 
-from library import tendies
+from scripts.library import tendies
 from usernames import usernames
-from library import randomx
+from scripts.library import randomx
 import random
 import string
 import time
-from commands import commands
+from scripts.commands import commands
 from prettytable import PrettyTable
 
 def rip(message):
