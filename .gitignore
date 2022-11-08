@@ -6,3 +6,4 @@
 .idea/discord-bot.iml
 
 Libraries/
+.env
