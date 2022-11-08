@@ -20,6 +20,8 @@ load_dotenv()
 
 client = discord.Client()
 
+TOKEN = os.getenv("DISCORD_TOKEN")
+
 @client.event
 async def on_ready():
     print(f'{client.user} is alive!')
