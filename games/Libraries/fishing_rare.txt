@@ -1,9 +1,0 @@
-fluke;https://imgur.com/vytOECf
-striped bass;https://imgur.com/JDV42mF
-sturgeon;https://imgur.com/NV5krL4
-coelacanth;https://imgur.com/FGss3kM
-mahimahi;https://imgur.com/MfegsgG
-skipjack Tuna;https://imgur.com/7W5cAEC
-dwarf sawfish;https://imgur.com/5Osu0bv
-swordfish;https://imgur.com/YWKUPUl
-clownfish;https://imgur.com/a/AupFltk
