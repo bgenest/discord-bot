@@ -2,7 +2,7 @@
 /shelf/
 /workspace.xml
 <<<<<<< HEAD
-.txt
+*.txt
 =======
 __pycache__
 Libraries
