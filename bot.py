@@ -1,4 +1,5 @@
 #bot.py
+from cProfile import label
 import time
 import datetime
 import discord
@@ -14,7 +15,10 @@ from scripts.rando_functions import tendie_func, rip, message_counter_add, messa
 from scripts.cooldowntimer import cooldowntimer, cooldowntimer2
 from scripts.commands import commands
 
+
+
 load_dotenv()
+
 TOKEN = "NzM3ODI5NDM5NTg0NDY5MTEz.XyDDNg.K5Hku-Pec72VcsjcoyjmhsJBXZw"
 
 client = discord.Client()
@@ -23,7 +27,16 @@ client = discord.Client()
 @client.event
 async def on_ready():
     print(f'{client.user} is alive!')
+    import tkinter as tk
 
+    label = tk.Label(
+    text="Wordbot Is alive!",
+    foreground="#FFFFFF",  # Set the text color to white
+    background="#3EB489",
+    width = 20,
+    height = 10
+    )
+    label.pack(fill=tk.BOTH,expand=1)
 
 @client.event
 async def on_message(message):  # sourcery skip: avoid-builtin-shadow
@@ -140,5 +153,4 @@ async def on_message(message):  # sourcery skip: avoid-builtin-shadow
                 if message.content.startswith("!!help"):
                     await message.channel.send("Here's a list of the current available commands:")
                     await message.channel.send(dicttoprettytable(commands))
-
 client.run(TOKEN)
