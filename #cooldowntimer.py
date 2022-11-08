@@ -1,14 +1,10 @@
 #cooldowntimer.py
 
-
 import time 
 import datetime
 from usernames import usernames
 
 print(time.time())
-
-
-
 
 def cooldowntimer(user):
     for user in usernames.key():
@@ -25,3 +21,4 @@ def cooldowntimer2(usrtime):
         return true
     else:
         return false
+        

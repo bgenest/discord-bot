@@ -9,7 +9,7 @@ import ast
 
 def cooldowntimer(cc):
     cooldown = {}
-    with open("cooldown.txt") as f:
+    with open("games/Libraries/cooldown.txt") as f:
         contents = f.read()
         cooldown = ast.literal_eval(contents)
         for user,value in cooldown.items():
@@ -21,10 +21,9 @@ def cooldowntimer(cc):
         else:
             return "false"
 
-
 def cooldowntimer2(cc,wait):
     cooldown = {}
-    with open("cooldown.txt" ) as f:
+    with open("games/Libraries/cooldown.txt" ) as f:
         contents = f.read()
         cooldown = ast.literal_eval(contents)
         for username,usertime in cooldown.items():

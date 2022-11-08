@@ -1,5 +1,9 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+<<<<<<< HEAD
+.txt
+=======
 __pycache__
 Libraries
+>>>>>>> 28676fe145ba244f85510a710b007b82ab8c3ac6

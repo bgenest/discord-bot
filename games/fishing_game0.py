@@ -7,7 +7,7 @@ from prettytable import PrettyTable
 from dotenv import load_dotenv
 from random import randint
 from usernames import usernames
-from cooldowntimer import cooldowntimer
+from scripts.cooldowntimer import cooldowntimer
 
 
 fish_common = {}
@@ -73,7 +73,7 @@ def fishing_0(cc):
         msg = ('you attempt to reel it in, but the fish gets away.')
         return msg0,msg1,msg2,msg
 
-def inventory(cc):
+def inventory0(cc):
         msg0 = (f"Pulling that up for you...")
         r = str()
         for x, y in usernames.items():
@@ -86,11 +86,14 @@ def inventory(cc):
                     v = open(usernames[cc]["file_name"], "r+" )
                     fishing_inventory = [line for line in v.readlines()]
                     fishing_inventory1 = []
+                    print(fishing_inventory)
                     for i in fishing_inventory:
                         fishing_inventory1.append(i.strip())
                     set_list = sorted(set(fishing_inventory1))
                     for i in set_list:
                         unique_fish.append(fishing_inventory1.count(i))
+                    print(unique_fish)
+                    print(set_list)
                     fishing_dict = {}
                     for i in unique_fish:
                         fishing_dict = dict(zip(set_list, unique_fish))

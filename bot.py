@@ -7,13 +7,13 @@ from discord.ext import commands
 from prettytable import PrettyTable
 from dotenv import load_dotenv
 from random import randint
-from rps import rps
-from fishing_game import fishing_0, inventory
+from games.rps import rps
+from games.fishing_game import fishing_0, inventory
 from usernames import usernames
-from library import random_dict_key,randomx,tendies,roasts,whales,replys,get_drink
-from rando_functions import tendie_func, rip, message_counter_add, message_counter_tell, dicttoprettytable
-from cooldowntimer import cooldowntimer, cooldowntimer2
-from commands import commands
+from scripts.library import random_dict_key,randomx,tendies,roasts,whales,replys,get_drink
+from scripts.rando_functions import tendie_func, rip, message_counter_add, message_counter_tell, dicttoprettytable
+from scripts.cooldowntimer import cooldowntimer, cooldowntimer2
+from scripts.commands import commands
 
 
 
@@ -39,7 +39,7 @@ async def on_ready():
     label.pack(fill=tk.BOTH,expand=1)
 
 @client.event
-async def on_message(message):
+async def on_message(message):  # sourcery skip: avoid-builtin-shadow
     id = client.get_guild(463170484373028865)
     cc = str(message.author)
 
@@ -98,7 +98,6 @@ async def on_message(message):
                     list = get_drink(message.content.lower())
                     await message.channel.send(list[0])
                     await message.channel.send(list[1])
-
             #random tendies
                 if "tendies pls" in message.content.lower():
                     if cooldowntimer2(cc,10) != 'true':
