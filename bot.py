@@ -1,4 +1,5 @@
-#bot.py
+import os
+from dotenv import load_dotenv
 from cProfile import label
 import time
 import datetime
@@ -15,14 +16,10 @@ from scripts.rando_functions import tendie_func, rip, message_counter_add, messa
 from scripts.cooldowntimer import cooldowntimer, cooldowntimer2
 from scripts.commands import commands
 
-
-
 load_dotenv()
 
-TOKEN = "NzM3ODI5NDM5NTg0NDY5MTEz.XyDDNg.K5Hku-Pec72VcsjcoyjmhsJBXZw"
-
+TOKEN = os.getenv("DISCORD_TOKEN")
 client = discord.Client()
-
 
 @client.event
 async def on_ready():
